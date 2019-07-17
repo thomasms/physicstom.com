@@ -20,6 +20,8 @@ class BlogPostTemplate extends React.Component {
         />
         <h1
           style={{
+            fontFamily: `Montserrat, sans-serif`,
+            color: `#231798`,
             marginTop: rhythm(1),
             marginBottom: 0,
           }}
@@ -45,6 +47,7 @@ class BlogPostTemplate extends React.Component {
 
         <ul
           style={{
+            fontFamily: `Montserrat, sans-serif`,
             display: `flex`,
             flexWrap: `wrap`,
             justifyContent: `space-between`,
@@ -88,8 +91,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
+        date(formatString: "DD MMMM, YYYY")
+        
       }
     }
   }
