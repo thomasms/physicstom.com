@@ -15,7 +15,7 @@ class Layout extends React.Component {
           style={{
             ...scale(1.5),
             fontFamily: `Montserrat, sans-serif`,
-            color: `#231798`,
+            color: `#1f3c88`,
             textAlign: `center`,
             marginLeft: `auto`,
             marginRight: `auto`,

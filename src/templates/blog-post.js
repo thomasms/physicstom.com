@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
         <h1
           style={{
             fontFamily: `Montserrat, sans-serif`,
-            color: `#231798`,
+            color: `#f7b633`,
             marginTop: rhythm(1),
             marginBottom: 0,
           }}
