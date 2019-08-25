@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import Apps from "../components/apps";
 
 class BlogIndex extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <Bio />
+        <Apps />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (

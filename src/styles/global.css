@@ -2,3 +2,16 @@ html {
     font: Montserrat;
     background: linear-gradient(to bottom, #ffffff3a 0%);
   }
+
+.apps-title{
+  font: Montserrat;
+  font-size: 32px;
+}
+
+.apps-nav-bar{
+  font: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  background: #03010f;
+  color: #f3efef;
+}
