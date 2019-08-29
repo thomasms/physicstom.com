@@ -1,7 +1,6 @@
 import React from "react"
 
 import { Link } from "gatsby"
-import { rhythm } from "../utils/typography"
 
 const Apps = () => {
   return (
@@ -22,7 +21,7 @@ const Apps = () => {
             }}
             to={`/apps/refresher/`}
             >
-            Refresher
+            Refresher - 
             </Link>
         </div>
     </div>

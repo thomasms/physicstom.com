@@ -6,12 +6,21 @@ html {
 .apps-title{
   font: Montserrat;
   font-size: 32px;
+  border-bottom: 0.1cm solid black
 }
 
 .apps-nav-bar{
   font: Montserrat;
   font-size: 28px;
   text-align: center;
-  background: #03010f;
-  color: #f3efef;
+  color: #2121af;
+  border-bottom: 0.1cm solid black
+}
+
+.apps-refresher-main{
+  font: Montserrat;
+  font-size: 28px;
+  text-align: center;
+  margin-top: 200px;
+  margin-bottom: 400px;
 }

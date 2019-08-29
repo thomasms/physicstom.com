@@ -77,3 +77,18 @@ module.exports = {
     },
   ],
 }
+module.export = {
+  plugins: [
+  {
+    resolve: `gatsby-plugin-sass`,
+  },
+ ],
+ module: {
+   loaders: [
+     {
+       test: /\.(sass|scss)$/,
+       loaders: ['sass-loader'],
+     },
+    ]
+  }
+}

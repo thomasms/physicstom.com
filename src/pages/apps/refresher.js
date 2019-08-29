@@ -8,10 +8,12 @@ import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import { CookiesProvider } from 'react-cookie';
 
+// import './refresher.scss';
+
 const COUNT_LIMIT = 200;
 
 // can we use React hooks instead??
-// probably but for now we do it the old 
+// for now we do it the old 
 // fashioned way
 class Refresher extends React.Component {
 
@@ -21,6 +23,8 @@ class Refresher extends React.Component {
 
    constructor( props ) {
      super( props );
+
+     this.reset = this.reset.bind(this);
 
      const { cookies } = props;
      this.state = {
@@ -35,19 +39,31 @@ class Refresher extends React.Component {
       }), function () {cookies.set('count', this.state.count, { path: '/' })});
    }
 
+   reset(){
+        const { cookies } = this.props;
+        this.setState({
+            count: 0
+        }, function () {cookies.set('count', 0, { path: '/' })});
+   }
+
    render(){
        var hidden = this.state.count > COUNT_LIMIT ? 
             <div>You are in!</div> : 
-            <p>
-              Number of hits: {this.state.count}
-            </p>;
+            <div>
+                <p>
+                Refresh me!
+                </p>
+                <p>
+                Number of hits: {this.state.count}
+                </p>
+            </div>;
 
        return (
            
-        <div className="App">
+        <div className="apps-refresher-main">
           <header className="App-header">
-	    {hidden}
-          </header>
+            {hidden}
+          </header><button class="button is-danger is-rounded" onClick={this.reset}>Reset</button>
         </div>
        );
    }
