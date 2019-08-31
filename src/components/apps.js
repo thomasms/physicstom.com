@@ -21,8 +21,9 @@ const Apps = () => {
             }}
             to={`/apps/refresher/`}
             >
-            Refresher - 
+                Refresher 
             </Link>
+            -
         </div>
     </div>
   )

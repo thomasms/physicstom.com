@@ -3,6 +3,8 @@ title: Mac your mac feel like new(ish)
 date: "2019-02-21T21:13:02.284Z"
 ---
 
+![Generic Mac](./macgeneric.jpg)
+
 Has your Mac become noticeably slower than when it was a shiny new machine fresh out of the box? Does switching it on feel like a steam locomotive, laboriously and reluctantly moving away from the station, resulting in several minutes of lost time just to get it running? Well my Mac mini (late 2014) certainly began to feel this way recently. It actually got to the point that I would turn it on, walk away and put the kettle on, come back log in and then go back to making my cup of tea, after which upon returning I finally noticed it up and running. The whole process taking in excess of 5 minutes. This is for a Mac which is only 3 years old!
 
 Now I’m generally a patient man, but my patience was wearing thin for my home computer, so I began to seek solutions. Ideally I’d like to keep my machine and didn’t want to fork out for a new machine. I was prepared to spend a little to upgrade and improve my Mac, but I didn’t want to spend over £250. Usually a machine runs slow for a few reasons, the main ones are not enough memory, too slow CPUs and bloated old hard drive. Now since my machine used to be quite quick I didn’t think it was the former two. Although I have some services running on my local machine and added many applications and software to it over time, the memory was ok, and rarely did I hit swap space. Thus I came to the conclusion that it was indeed my bloated old hard drive.
