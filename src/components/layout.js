@@ -3,6 +3,8 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
+import mainLogo from '../../content/assets/android-chrome-512x512.png'
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -31,7 +33,7 @@ class Layout extends React.Component {
             }}
             to={`/`}
           >
-            {title}
+            <img  src={mainLogo} alt="logo" width="40px"/> {title}
           </Link>
         </h3>
       )
