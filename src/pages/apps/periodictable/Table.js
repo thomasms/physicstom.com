@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridColourElement } from './Element.js';
+import GridColourElement from './Element.js';
 
 import data from './data/data.json';
 
@@ -179,7 +179,6 @@ class Table extends React.Component {
     const allElements = this.allElements();
     return (
       <div>
-        {/*<button onClick={() => {this.setState({selectedElements: []})}}>Reset</button>*/}
         <div className="apps-periodictable-table">
           {allElements}
         </div>
@@ -193,10 +192,6 @@ class Table extends React.Component {
           <p>
             {details}
           </p>
-        </div>
-        {/*
-        <div className="Table-selector">
-          <b>Selected elements:</b> {selectedElements}
         </div>
         */}
       </div>
