@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from "gatsby"
 
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
+import Layout from "../../../components/layout"
+import SEO from "../../../components/seo"
 
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import { CookiesProvider } from 'react-cookie';
 
-// import './refresher.scss';
+// import './app.scss';
 
 const COUNT_LIMIT = 200;
 

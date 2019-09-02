@@ -13,15 +13,27 @@ const Apps = () => {
         <div
         className="apps-nav-bar"
         >
+            -
             <Link
             style={{
                 boxShadow: `none`,
                 textDecoration: `none`,
                 color: `inherit`,
             }}
-            to={`/apps/refresher/`}
+            to={`/apps/refresher/app`}
             >
                 Refresher 
+            </Link>
+            - -
+            <Link
+            style={{
+                boxShadow: `none`,
+                textDecoration: `none`,
+                color: `inherit`,
+            }}
+            to={`/apps/periodictable/app`}
+            >
+                Periodic Table 
             </Link>
             -
         </div>
