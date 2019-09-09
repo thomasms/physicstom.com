@@ -34,6 +34,7 @@ html {
 }
 
 /* periodic table app */
+
 .apps-periodictable-main {
   font: Montserrat;
   text-align: center;
@@ -64,7 +65,7 @@ html {
   width: 60px;
   height: 60px;
   align-items: center;
-  border: 1px solid #282c34;
+  border: 2px solid #282c34;
 }
 
 .apps-periodictable-element-atomic{
@@ -96,7 +97,7 @@ html {
   display: grid;
   grid-gap: 3px 3px;
   grid-template-columns: auto repeat(auto-fill, auto);
-  justify-content: center;
+  justify-content: left;
   padding-top: 10px;
   padding-bottom: 0px;
 }
