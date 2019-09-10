@@ -1,22 +1,14 @@
 html {
     font: Montserrat;
     background: linear-gradient(to bottom, #ffffff3a 0%);
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
 
 .apps-title{
   font: Montserrat;
   font-size: 32px;
-  border-bottom: 0.1cm solid black
-}
-
-.apps-nav-bar{
-  font: Montserrat;
-  font-size: 28px;
-  text-align: center;
-  color: #2121af;
   border-bottom: 0.1cm solid black
 }
 

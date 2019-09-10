@@ -8,7 +8,7 @@ import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import { CookiesProvider } from 'react-cookie';
 
-// import './app.scss';
+import './app.scss';
 
 const COUNT_LIMIT = 200;
 

@@ -67,6 +67,7 @@ module.exports = {
         icon: `content/assets/android-chrome-512x512.png`,
       },
     },
+    `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -76,19 +77,4 @@ module.exports = {
       },
     },
   ],
-}
-module.export = {
-  plugins: [
-  {
-    resolve: `gatsby-plugin-sass`,
-  },
- ],
- module: {
-   loaders: [
-     {
-       test: /\.(sass|scss)$/,
-       loaders: ['sass-loader'],
-     },
-    ]
-  }
 }
