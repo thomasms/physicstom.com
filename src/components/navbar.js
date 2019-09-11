@@ -53,7 +53,16 @@ class NavBar extends React.Component{
                     </a>
 
                     <a className="navbar-item" href="# ">
-                        About
+                        <Link
+                        style={{
+                            boxShadow: `none`,
+                            textDecoration: `none`,
+                            color: `inherit`,
+                        }}
+                        to={`/about`}
+                        >
+                            About 
+                        </Link>
                     </a>
                 </div>
 
