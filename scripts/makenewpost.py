@@ -21,6 +21,8 @@ with open(os.path.join(new_dir, BLOG_FILE), 'wt') as bf:
 '''---
 title: {}
 date: "2019-01-19T22:12:03.284Z"
+readtime: 10 mins
+tags: []
 ---
 
 Content here....

@@ -9,4 +9,4 @@ In the UK we rarely speak about salaries, but in the situation when you’re neg
 
 Now, whilst there are plenty of websites that give you a monthly breakdown given your annual salary, few, if any, give you a dashboard approach, with simple design. Some I have used are very detailed and functional, but overload the user with buttons and options and many lacked visual aids such as graphs and plots. Hence, accountingtom.com was born. 
 
-Check it out – https://accountingtom.com and let me know what you think.
+Check it out [here](https://accountingtom.com) and let me know what you think.
