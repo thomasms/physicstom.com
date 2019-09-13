@@ -1,5 +1,5 @@
 ---
-title: Grossed Out
+title: Grossed out
 date: "2019-02-09T21:11:01.284Z"
 readtime: 1 min
 tags: ['tax', 'income', 'accounting', 'webapp', 'uk']

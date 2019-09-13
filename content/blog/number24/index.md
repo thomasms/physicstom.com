@@ -1,11 +1,13 @@
 ---
 title: A great age and number too
 date: "2019-03-27T03:43:53.284Z"
-readtime: 2 mins
+readtime: 3 mins
 tags: ['24', 'string theory', 'Ramanujan', 'prime number']
 ---
 
 This post is about the number 24, my favourite number. Why? Well, not only was it a great age to be, it is also mathematically interesting for several reasons. 
+
+![24](./24hours.jpg)
 
 I first became aware of its elegance when studying String Theory. In bosonic string theory it turns out that the ideal number of dimensions is 24 + 2 = 26, (for reasons not included here, check out Dr David Tongs lecture notes [here](http://www.damtp.cam.ac.uk/user/tong/string/string.pdf). Yes, not exactly 24 but the additional 2 dimensions are due to the strings dimensions. To arrive at this, we have made use of a truly wonderful and weird result, first intuited by Ramanujan,
 $$

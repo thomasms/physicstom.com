@@ -1,5 +1,5 @@
 ---
-title: Killer Commute Revisited
+title: Killer commute revisited
 date: "2019-09-05T22:22:21.284Z"
 readtime: 3 mins
 tags: ['commute', 'google', 'API', 'python']
