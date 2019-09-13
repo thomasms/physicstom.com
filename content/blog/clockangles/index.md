@@ -1,6 +1,8 @@
 ---
 title: Clock Angles
 date: "2019-03-04T22:12:24.284Z"
+readtime: 3 mins
+tags: ['maths', 'clock', 'angle']
 ---
 
 ![Clock](./clock.jpg)

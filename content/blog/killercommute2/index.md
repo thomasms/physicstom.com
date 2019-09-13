@@ -1,6 +1,8 @@
 ---
 title: Killer Commute Revisited
 date: "2019-09-05T22:22:21.284Z"
+readtime: 3 mins
+tags: ['commute', 'google', 'API', 'python']
 ---
 
 Back in March 2019, I posted a small entry on using Google directions APIs to determine the optimal commute time to and from work. The previous post is [here](../killercommute).

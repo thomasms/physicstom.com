@@ -1,6 +1,8 @@
 ---
 title: Reignite my blogging passion
 date: "2019-01-19T22:12:03.284Z"
+readtime: 3 mins
+tags: ['fatmonty', 'physicstom', 'blog']
 ---
 
 My old blog [fat monty](http://www.fatmonty.com), has been long retired and I felt a strong impetus to start a fresh reincarnation of it. So here I am again - new name and new blog.

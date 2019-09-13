@@ -1,6 +1,8 @@
 ---
 title: When a line meets a plane
 date: "2019-04-20T03:04:56.284Z"
+readtime: 4 mins
+tags: ['geometry', 'plane', 'angle', 'line', 'vector']
 ---
 This was always a nice problem to solve involving vectors and linear algebra. Given two points dictating the line and three points defining the plane, at what point (if any) does the line intersect the plane?
 

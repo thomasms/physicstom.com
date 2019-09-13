@@ -1,6 +1,8 @@
 ---
 title: Mac your mac feel like new(ish)
 date: "2019-02-21T21:13:02.284Z"
+readtime: 3 mins
+tags: ['mac', 'SSD']
 ---
 
 ![Generic Mac](./macgeneric.jpg)

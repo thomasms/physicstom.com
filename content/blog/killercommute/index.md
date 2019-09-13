@@ -1,6 +1,8 @@
 ---
 title: Killer Commute
 date: "2019-03-23T23:46:21.284Z"
+readtime: 2 mins
+tags: ['commute', 'google', 'API', 'python']
 ---
 
 Nobody likes traffic and congestion, especially me.
