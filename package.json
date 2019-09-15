@@ -1,7 +1,7 @@
 {
   "name": "PhysicsTom",
   "private": true,
-  "description": "A dumping ground for ideas, thoughts and projects",
+  "description": "A dumping ground for ideas, thoughts and projects by Thomas Stainer",
   "version": "0.1.0",
   "author": "Thomas Stainer <stainer.tom@gmail.com>",
   "bugs": {
@@ -47,7 +47,10 @@
   },
   "homepage": "https://github.com/thomasms",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "physics",
+    "programming",
+    "raect"
   ],
   "license": "MIT",
   "main": "n/a",

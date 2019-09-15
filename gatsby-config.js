@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Physics Tom`,
     author: `Thomas Stainer`,
-    description: `A dumping ground for ideas, thoughts and projects.`,
+    description: `A dumping ground for ideas, thoughts and projects by Thomas Stainer.`,
     siteUrl: `https://physicstom.com`,
     social: {
       twitter: ``,
