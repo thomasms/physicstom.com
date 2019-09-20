@@ -1,11 +1,11 @@
 ---
 title: Refactor, Rewrite, or Retire?
 date: "2019-09-18T21:55:32.284Z"
-readtime: 25 mins
+readtime: 11 mins
 tags: []
 ---
 
-I recently gave a talk at the Fourth Conference of Research Software Engineering (RSEConUK 2019) regarding dealing with legacy software. It aimed to answer the question of whether to rewrite or refactor a legacy code base when the code reaches breaking point. I added a third option as well, retiring software, which I think is also a valid option. Hence the title - Refactor, Rewrite, or Retire? This was motivated strongly by anecdotal viewpoints but I also feel it represents viewpoints of the wider developer community, with some notable references. I will translate the main points of the talk into the medium of a blog entry.
+I recently gave a talk at the Fourth Conference of Research Software Engineering (RSEConUK 2019) regarding options when dealing with legacy software. It aimed to answer the question of whether to rewrite or refactor a legacy code base when the code reaches breaking point. I added a third option as well, retiring software, which I think covers the alternative view of letting software just die. Hence the title - Refactor, Rewrite, or Retire? This was motivated strongly by anecdotal viewpoints but I also feel it represents viewpoints of the wider developer community, with some notable references. I will translate the main points of the talk into the medium of a blog entry.
 
 So to Refactor, Rewrite, or Retire? 
 
@@ -19,7 +19,7 @@ So to Refactor, Rewrite, or Retire?
 
 The short answer is just that, and is my general conclusion. Earlier in my career my answer was different, always rewrite, but I have realised that over time rewriting is usually not the best solution. However, those who are eagled-eyed will have noticed the  asterisk next to refactor - it is not always the case, there are exceptions. Now let me motivate you as to why.
 
-A brief introduction to my experience and background to help motivate my case. I started my career as a physicist during my PhD, and since migrated through various different industries and domains: research, private sector, start-ups, and now Government. Spanning Physics research, Petrochemical industry, IT security, to the Nuclear industry. Across this portfolio of industries I have spent a large amount of my career dealing with legacy and inherited code bases (mainly Fortran), and I have done all three! Though I would say that around 80% has been refactoring code bases, so I am slightly biased, even though my personal favourite is to rewrite. Some of the rewrites I have done have been successful and fun to design and build, but others have not been so successful, and still to this day people/managers/users/stakeholders have reverted to the original code base and ignored the rewrite at a significant financial cost. It always came down to the fact that results had changed or if not the interface was too dramatic a change it was not adopted. One particular project from my junior days, in which I pushed for a rewrite, remains one of my largest regrets (in software, not in life).
+A brief introduction to my experience and background to help motivate my case. I started my career as a physicist during my PhD, and since migrated through various different industries and domains: research, private sector, start-ups, and now Government. Spanning Physics research, Petrochemical industry, IT security, to the Nuclear industry. Across this portfolio of industries I have spent a large amount of my career dealing with legacy and inherited code bases (mainly Fortran), and I have done all three! Though I would say that around 80% has been refactoring code bases, so I am slightly biased, even though my personal favourite is to rewrite. Some of the rewrites I have done have been successful and fun to design and build, but others have not been so successful, and still to this day people/managers/users/stakeholders have reverted to the original code base and ignored the rewrite at a significant financial cost. It always came down to the fact that results had changed or if not, the interface was too dramatic a change, and it was not adopted. One particular project from my junior days, in which I pushed for a rewrite, remains one of my largest regrets (in software, not in life).
 
 Let's start with some common complaints (from developers) of legacy code bases, to help motivate my case. Some of which you may hear being shouted down the corridor. 
 
@@ -46,7 +46,7 @@ Let's start with some common complaints (from developers) of legacy code bases, 
 And so forth... OK, not all are common, but the main one I would like to highlight, and feel particularly defines legacy 
 code - lack of tests. 
 
-So why do developers have such complaints? Well I have defined some 'laws' of programming. Well not quite laws, more anecdotal views.
+So why do developers have such complaints? Well I have defined some 'laws' of programming, or should I say more anecdotal views.
 
 ![Laws](./laws.png)
 
@@ -59,6 +59,7 @@ So why do developers have such complaints? Well I have defined some 'laws' of pr
 Law 1 is very appropriate to me. I am sure that most developers like to write code more than read it, and therefore many find it easier to write code. I find it is a valuable skill for a developer to be able to not only write good readable code, but to be able to read someone else's code. I think this is because generally there is more than one way to solve a problem, and if it wasn't solved your way then humans can find that frustrating.
 
 Law 2 is quite obviously true - plain and simple. If we look at how much things have changed just in the past 10 years, and the rise and fall of new technologies and programming languages, this one is very obvious. And this is only accelerating. Legacy code doesn't have to be 40 years old.
+
 Law 3 is maybe not applicable to all developers, but a large amount I have worked with always think they are better than their predecessors without knowing anything about them, but based on a few glimpses of their inherited code. I know I have fallen for this a few times. I have even done this to my own code not knowing it was me who initially wrote it!
 
 With those laws now clearly defined we can move onto the great question.
