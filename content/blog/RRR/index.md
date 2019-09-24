@@ -129,5 +129,55 @@ On the other hand, with refactor we can use similar arguments against a rewrite.
 
 Nothing lasts forever! Retiring software usually occurs when clients no longer use it, and has been superseded by another product. Even though it may have been superseeded some clients will refuse to abandon it, for reasons due to cost or, as mentioned on the previously, due to risk of changes. This should always remain an option as nothing lasts forever. A great talk on how to retire software, or services, can be found from last years conference by Catherine Jones [here](https://drive.google.com/file/d/1qe7urSXo6AFiuSsn-I--0ObTFomxaA-Z/).
 
-<h4>The Good, the Bad and the Ugly</h4>
-Now to provide some examples of the good, the bad and the ugly in terms of rewrites...
+<h3>The Good, the Bad and the Ugly</h3>
+Now to provide some examples of the good, the bad and the ugly in terms of rewrites.
+
+Let's start with the ugly.
+
+<h4>Netscape</h4>
+
+![NetscapeLogo](./NetscapeLogo.jpg)
+
+Netscape, probably the most famous rewrite failure. Netscape was the dominant web browser in the early 90's but is almost non existent today. They decided to rewrite their whole code base, apparently due to a horrible code base and performance reasons, but it took over two years to complete, and it didn't go well from there. Largely considered a failure and possibly responsible for their downfall. Although it is not fair to entirely blame the lack of dominance due to the rewrite, IE came about soon after, and we all know the rest of that story.
+
+<h4>Microsoft Word</h4>
+The bad.
+
+![WordLogo](./wordlogo.jpg)
+
+Microsoft Word decided to rewrite their code base in order to unify codes for both mac OS and Windows - codename Project Pyramid. Started in early 90's again, but unlike Netscape they did this in parallel with development of the existing code. This meant that whilst they could never catch up, the repercussions were not as detrimental as with Netscape. They could still deliver products based on the existing code base. It did cost them financially though.
+
+<h4>Geant</h4>
+The good.
+
+![GeantLogo](./geant4logo.jpg)
+
+Much less well known than the previous two, it is only used within scientific communities, with a heavy research focus. Geant is a scientific Monte Carlo particle transport code developed by CERN, and it is used in applications for particle, nuclear, and medical physics. Geant 4 (C++) is the current version and was a complete rewrite from Geant 3 (Fortran), originating from the 70's. Whilst some experiments still use Geant 3 (some people still don't trust Geant 4), it is hailed generally as a success by many and is massively popular in those communities. There is of course another rewrite planned and development ongoing, Geant-V, which then attempts to address existing performance issues (it can be quite slow). The V is for vectorised, not 5. 
+More on Geant [here](http://geant.cern.ch/)
+
+
+<h3>Final thoughts</h3>
+
+<ul style="margin-left:50px;margin-right:50px">
+  <li><b>Don't let programming language bias drive for a rewrite</b></li>
+  <li><b>Resist initial temptation for a rewrite</b></li>
+  <ul style="margin-left:50px;margin-right:50px">
+    <li>Code does not rust</li>
+    <li>Ugly code can be very reliable</li>
+  </ul>
+  <li><b>Testing is crucial for refactor or rewrite</b></li>
+  <ul style="margin-left:50px;margin-right:50px">
+    <li>System and regression tests are essential before you rewrite or refactor</li>
+  </ul>
+  <li><b>Refactoring is always less risky</b></li>
+  <ul style="margin-left:50px;margin-right:50px">
+    <li>People don't like change</li>
+  </ul>
+  <li><b>Remember the laws!</b></li>
+</ul>
+
+However, sometimes a rewrite is unavoidable, and can (sometimes) pay off in the long run. A colleague of mine once suggested that all code should have an expiry date, and therefore proposes that all software should be rewritten every N years. Whilst a radical opinion and completely against what I preach, there are interesting arguments for this, which I will not go into right now. Maybe for a later blog post.
+
+Remember that most nuclear reactors running today are based on old Fortran code and data originating from the 1960's. 
+
+<strong><b><center>If it ain't broke don't fix it.</center></b></strong>
