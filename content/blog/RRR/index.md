@@ -2,7 +2,7 @@
 title: Refactor, Rewrite, or Retire?
 date: "2019-09-18T21:55:32.284Z"
 readtime: 11 mins
-tags: []
+tags: [refactor, rewrite, legacy, netscape, geant]
 ---
 
 I recently gave a talk at the Fourth Conference of Research Software Engineering (RSEConUK 2019) regarding options when dealing with legacy software. It aimed to answer the question of whether to rewrite or refactor a legacy code base when the code reaches breaking point. I added a third option as well, retiring software, which I think covers the alternative view of letting software just die. Hence the title - Refactor, Rewrite, or Retire? This was motivated strongly by anecdotal viewpoints but I also feel it represents viewpoints of the wider developer community, with some notable references. I will translate the main points of the talk into the medium of a blog entry.
