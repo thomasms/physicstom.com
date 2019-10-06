@@ -129,9 +129,10 @@ if showplot:
         steps.append(getnumberofsteps(1, 1))
 
     fig = plt.figure()
-    plt.hist(steps, bins=range(0, 100), facecolor='r', 
+    n, bins, patches = plt.hist(steps, bins=range(0, 100), facecolor='r', 
         edgecolor='black', linewidth=1.2, alpha=0.4)
     plt.yscale('log', nonposy='clip')
+    print(n)
 
     plt.show()
 

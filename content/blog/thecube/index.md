@@ -2,10 +2,10 @@
 title: Random walk on a cube
 date: "2019-05-31T22:45:03.284Z"
 readtime: 5 mins
-tags: [linear algebra]
+tags: ['linear algebra']
 ---
 
-Another interesting question I was asked in a job interview, was about a cube. The question was simple: "Given I'm at one corner of the cube and move 1 step each time, what is the expected number of steps it would take for a random walk to end up back on the starting position?". Well, after some thought and solving some simple equations we can arrive at the value of 8. An interesting number no doubt since a cube has eight vertices, but let's see why this turns out to be the case.
+Another interesting question I was asked in a job interview, was about a cube. The question was simple: "Given I'm at one corner of the cube and move 1 step each time, what is the average number of steps it would take for a random walk to end up back on the starting position?". Well, after some thought and solving some simple equations we can arrive at the value of 8. An interesting number no doubt since a cube has eight vertices, but let's see why this turns out to be the case.
 
 First let's draw the cube.
 
