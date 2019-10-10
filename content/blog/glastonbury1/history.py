@@ -116,6 +116,13 @@ DATA = [
     },
 ]
 
+active_years = [entry['year'] for entry in DATA]
+actual_years = range(active_years[0], active_years[-1], 1)
+missing_years = sorted(list(set(actual_years) - set(active_years)))
+missing_year_indices = [actual_years.index(y) for y in missing_years]
+print(missing_years)
+print(missing_year_indices)
+
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
@@ -127,18 +134,37 @@ for d in DATA:
     prices.append(d['price'])
     sellouttimes.append(d['sellouttime'])
 
-# sellout times
+# sellout times - show missing years with dash line
 f = plt.figure()
-plt.plot(times, sellouttimes, 'k', label='sellout time', alpha=0.8, linewidth=4.)
-plt.axhline(y=0.5*HOUR, color='r', label="30 mins", alpha=0.3)
+
+# break up into festival and fallow years
+# not a good way to do this - can we have an algorithm to do this?
+plt.plot(times[:2], sellouttimes[:2], 'k', linestyle=":",
+    marker='o', markersize=10, alpha=0.8, label="fallow years", linewidth=4.)
+plt.plot(times[1:5], sellouttimes[1:5], 'k', linestyle="-",
+    marker='o', markersize=10, label='festival years', alpha=0.8, linewidth=4.)
+plt.plot(times[4:6], sellouttimes[4:6], 'k', linestyle=":",
+    marker='o', markersize=10, alpha=0.8, linewidth=4.)
+plt.plot(times[5:10], sellouttimes[5:10], 'k', linestyle="-",
+    marker='o', markersize=10, alpha=0.8, linewidth=4.)
+plt.plot(times[9:11], sellouttimes[9:11], 'k', linestyle=":",
+    marker='o', markersize=10, alpha=0.8, linewidth=4.)
+plt.plot(times[10:15], sellouttimes[10:15], 'k', linestyle="-",
+    marker='o', markersize=10, alpha=0.8, linewidth=4.)
+plt.plot(times[14:16], sellouttimes[14:16], 'k', linestyle=":",
+    marker='o', markersize=10, alpha=0.8, linewidth=4.)
+plt.plot(times[15:17], sellouttimes[15:17], 'k', linestyle="-",
+    marker='o', markersize=10, alpha=0.8, linewidth=4.)
+
+plt.axhline(y=0.5*HOUR, color='r', alpha=0.3)
 plt.text(2011, 0.52*HOUR, "30 mins", fontsize=12)
-plt.axhline(y=HOUR, color='r', label="1 hour", alpha=0.3)
+plt.axhline(y=HOUR, color='r', alpha=0.3)
 plt.text(2011, 1.02*HOUR, "1 hour", fontsize=12)
-plt.axhline(y=DAY, color='r', label="1 day", alpha=0.3)
+plt.axhline(y=DAY, color='r', alpha=0.3)
 plt.text(2011, 1.1*DAY, "1 day", fontsize=12)
-plt.axhline(y=MONTH, color='r', label="1 month", alpha=0.3)
+plt.axhline(y=MONTH, color='r', alpha=0.3)
 plt.text(2011, 1.1*MONTH, "1 month", fontsize=12)
-plt.axhline(y=6*MONTH, color='r', label="6 months", alpha=0.3)
+plt.axhline(y=6*MONTH, color='r', alpha=0.3)
 plt.text(2011, 6.1*MONTH, "6 months", fontsize=12)
 ax = plt.gca()
 ax.xaxis.set_major_locator(MaxNLocator(integer=True))
@@ -147,7 +173,7 @@ ax.tick_params(axis='both', which='major', labelsize=14)
 plt.xlabel('year', fontsize=18)
 plt.ylabel('sellout time (s)', fontsize=18)
 plt.yscale('log')
-# plt.legend()
+plt.legend()
 
 # price
 f = plt.figure()
