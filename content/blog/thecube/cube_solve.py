@@ -6,12 +6,14 @@ Number of average steps from node 1 back to node 1
 Should be 8!
 
 """
-from math import sqrt; from itertools import count, islice
+from math import sqrt
+from itertools import count, islice
 
 def isPrime(n):
     return n > 1 and all(n%i for i in islice(count(2), int(sqrt(n)-1)))
 
 import numpy as np
+from numpy.linalg import matrix_power
 
 # matrix of graph of cube
 A = np.matrix([[0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0 ],
@@ -84,51 +86,39 @@ print("======================\n")
 # the matrix on the unit vector for n_{1} = [1, 0, 0,.....]
 # gives the number of paths from n_{1} to another node
 # number of paths from 1 to another node
-test_vector = np.zeros((8,1))
-test_vector[0]=1
+
+def computewalk(mat, nsteps):
+    test_vector = np.zeros((8,1))
+    test_vector[0] = 1
+
+    full_mat = matrix_power(mat, nsteps)
+    # print(full_mat)
+    vec = full_mat*test_vector
+    prob = vec[0]/sum(vec)
+    return prob[0,0], vec
+
 # if we take one step from node 1 we can go to 2, 4, 6 each by one way
 # hence we get [0,1,0,1,0,1,0,0]
-print("One step...")
-print(A*test_vector)
-# if we take two step from node 1 we can go to 1, 3,5,7 each by several ways
-# hence we get [3,0,2,0,2,0,2, 0]
-lastProb = 1
-print("Two steps...")
-steps = A*A*test_vector
-print(steps, sum(steps)[0,0], 2*lastProb*steps[0,0]/sum(steps)[0,0])
-lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
-print(lastProb)
-print("Three steps...")
-steps = A*A*A*test_vector
-print(steps, sum(steps)[0,0], 3*lastProb*steps[0,0]/sum(steps)[0,0])
-# lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
-print(lastProb)
-print("Four steps...")
-steps = A*A*A*A*test_vector
-print(steps, sum(steps)[0,0], 4*lastProb*steps[0,0]/sum(steps)[0,0])
-lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
-print(lastProb)
-print("Five steps...")
-steps = A*A*A*A*A*test_vector
-print(steps, sum(steps)[0,0], 5*lastProb*steps[0,0]/sum(steps)[0,0])
-lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
-print(lastProb)
-print("Six steps...")
-steps = A*A*A*A*A*A*test_vector
-print(steps, sum(steps)[0,0], 6*lastProb*steps[0,0]/sum(steps)[0,0])
-lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
-print(lastProb)
-# and so on....
-print("Eight steps...")
-steps = A*A*A*A*A*A*A*A*test_vector
-print(steps, sum(steps)[0,0], 8*lastProb*steps[0,0]/sum(steps)[0,0])
-lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
-print(lastProb)
-print("Ten steps...")
-steps = A*A*A*A*A*A*A*A*A*A*test_vector
-print(steps, sum(steps)[0,0], 10*lastProb*steps[0,0]/sum(steps)[0,0])
-lastProb = lastProb*steps[0,0]/sum(steps)[0,0]
+probs = []
+values = []
+for i in range(2, 100, 2):
+    print("{} step...".format(i))
+    prob, vec = computewalk(A, i)
+    print(prob, vec[0,0])
+    probs.append((i, prob))
+    values.append((i, vec[0,0]))
 
+import matplotlib.pyplot as plt
+
+f = plt.figure()
+X, Y = map(list, zip(*probs))
+plt.plot(X, Y, 'k', alpha=0.7)
+f = plt.figure()
+X, Y = map(list, zip(*values))
+plt.semilogy(X, Y, 'ko', alpha=0.7)
+plt.xlabel("number of steps (k)", fontsize=16)
+plt.ylabel("number of paths 1 -> 1", fontsize=16)
+plt.show()
 # we therefore need to sum over all paths that lead to n_{1}
 # only even number of steps lead back to one
 # 2 steps -> 3 ways (1*3)

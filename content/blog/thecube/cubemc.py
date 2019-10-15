@@ -5,6 +5,7 @@
     date: 26/09/2019 @ 21:34
 """
 
+import math
 import numpy as np
 from scipy import stats
 
@@ -108,11 +109,14 @@ for node in CUBEGRAPH['nodes']:
     # 1 -> X 
     # all others are same due to symmetry
     averagesteps = estimateaveragewalk(CUBEGRAPH, 1, node, niter=NITERS)
-    mostcommon = estimateaveragewalk(CUBEGRAPH, 1, node, niter=NITERS, op=stats.mode )
+    mostcommon = estimateaveragewalk(CUBEGRAPH, 1, node, niter=NITERS, op=stats.mode)
     print("1 -> {} = {:.3f} with dominant path of {} step(s)".format(node, averagesteps, mostcommon.mode[0]))
 
 if showplot:
     import matplotlib.pyplot as plt
+    from scipy.optimize import curve_fit
+    from scipy.stats import norm
+    from tqdm import tqdm
 
     # check distribution of final node for 8 steps
     nodes = []
@@ -123,7 +127,7 @@ if showplot:
     plt.hist(nodes, bins=range(min(CUBEGRAPH['nodes']), max(CUBEGRAPH['nodes'])), 
         facecolor='r', edgecolor='black', linewidth=1.2, alpha=0.4)
 
-    # check distribution of final node for 8 steps
+    # check distribution of path lengths for 1 -> 1
     steps = []
     for _ in range(100000):
         steps.append(getnumberofsteps(CUBEGRAPH, 1, 1))
@@ -131,10 +135,38 @@ if showplot:
     fig = plt.figure()
     n, bins, patches = plt.hist(steps, bins=range(0, 100), facecolor='r', 
         edgecolor='black', linewidth=1.2, alpha=0.4)
+    total = 0
+    for i,j in enumerate(n):
+        total += i*j/100000
+
+    print(total)
+
     plt.xlabel("number of steps 1 -> 1", fontsize=16)
     plt.ylabel("count", fontsize=16)
     plt.yscale('log', nonposy='clip')
     # print(n)
+
+    # run walk 1 -> 1 and get average many times to estimate uncertainty
+    iters = 100
+    values = []
+    for _ in tqdm(range(iters)):
+        values.append(estimateaveragewalk(CUBEGRAPH, 1, 1, niter=1000))
+    
+    fig = plt.figure()
+    n, bins, patches = plt.hist(values, density=True, bins=20, facecolor='k', 
+        edgecolor='black', linewidth=2, alpha=0.2)
+
+    # normalise values
+    mu, std = norm.fit(values)
+
+    xmin, xmax = plt.xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = norm.pdf(x, mu, std)
+    plt.plot(x, p, 'k', linewidth=2)
+    plt.xlabel("number of steps 1 -> 1", fontsize=16)
+    plt.ylabel("density", fontsize=16)
+    plt.yscale('linear')
+    plt.title("Fit results: mu = {:.2f},  std = {:.2f}".format(mu, std))
 
     plt.show()
 

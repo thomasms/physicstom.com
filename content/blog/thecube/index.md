@@ -1,7 +1,7 @@
 ---
 title: Random walk on a cube
 date: "2019-05-31T22:45:03.284Z"
-readtime: 5 mins
+readtime: 12 mins
 tags: ['linear algebra']
 ---
 
@@ -182,7 +182,19 @@ n_{k=4} = \left(\begin{array}{c}21\\0\\20\\0\\20\\0\\20\\0\\\end{array}\right),
 n_{k=5} = \left(\begin{array}{c}0\\61\\0\\61\\0\\61\\0\\60\\\end{array}\right).
 $$
 
-....
+Since only even values of $k$ lead to paths back to vertex 1 we consider the sequence of $k \in 2,4,6,....$ which goes as:
+$$
+3, 21, 183, 1641, 14763, 132861, 1195743, 10761681, 96855123, 871696101, 7845264903, 70607384121, ...
+$$
+exponentially increasing with each $k$. It is not obvious how this sequence is defined, we can examine the relationship below (note the log y scale). 
+
+![k_vs_n](./k_vs_n.png)
+
+It is worth noting that the probability of going from vertex 1 back to 1 in taking $k$ steps, labelled as $p^{k}_{1 \rightarrow 1}$, quickly converges to 0.25 as $k \rightarrow \infty$ (proof needed here). Thus is we know the probability of taking $k$ steps we can then determine the average number of steps from 1 back to 1 i.e. $n_{1}$.
+$$
+n_{1} = {\sum^{\infty}_{k=1}{2k p^{2k}_{1 \rightarrow 1} \prod^{2(k-1)}_{j=1}(1 - p^{2j}_{1 \rightarrow 1}) }}
+$$
+
 
 <h2>Monte Carlo confirmation</h2>
 Since I am an experimentalist I like to confirm with experiment, and in this case we will do a simple Monte Carlo approach to confirm that the answer is indeed 8. I am using vanilla Python3 (with some numpy ans scipy to help) to make a simple script to compute this.
@@ -305,7 +317,10 @@ averagesteps = estimateaveragewalk(CUBEGRAPH, 1, 1, niter=10000)
 print("1 -> {} = {:.3f}".format(1, averagesteps))
 ```
 
-Running this once for 10,000 iterations I got 7.905, so not too far off. 
+Running this once for 10,000 iterations I got 7.905, so not too far off. In order to actually see whether this is statistically correct, we need to run this many times and examine the distribution. 
 
-Here are the results for paths containing up to 100 steps.
+After doing this I get a very nice fitting Gaussian with a value of 8.00 $\pm$ 0.24. Exactly bang on!
+![Distribution](./distribution.png)
+
+Here are the results for paths containing up to 100 steps for 10,000 iterations to show the relative probabilities of each path.
 ![Steps](./1_to_1_steps_hist.png)
