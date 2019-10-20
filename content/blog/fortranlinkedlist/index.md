@@ -7,7 +7,7 @@ tags: ["fortran", "linked list", "data structures"]
 
 Whilst I enjoy programming in Python and C++, it is envitable that I have to do some development work with Fortran for time to time. The number of code bases still in Fortran in the scientific and research sector is overwhelming. Life is not all bad though the "newer" standards (2003/2008) have now been supported by most compilers and most people using Fortran today will try and at least use some of these new features.
 
-Since Fortran 2003 it supports some Object Orientated (OO) features, such as encapsulation and inheritance, although it is not true OO. It allows you to define type bound procedures such as
+Since Fortran 2003 supports some Object Orientated (OO) features, such as encapsulation and inheritance, although it is not true OO. It allows you to define type bound procedures such as
 
 ```fortran
 type, public :: my_type
@@ -49,7 +49,7 @@ integer, parameter, public :: ki4 = int32
 
 
 <h1>Linked list in Fortran</h1>
-Now I promised you a linked list but instead have rambled on about type bound procedures and integer kinds, well to define a linked list I am going to define a few types wihtin a module, named <b>linked_list</b>.
+Now I promised you a linked list but instead have rambled on about type bound procedures and integer kinds, well to define a linked list I am going to define a few types within a module, named <b>linked_list</b>.
 
 Lets define the module
 
@@ -65,7 +65,7 @@ module linked_list_m
 end module linked_list_m
 ```
 
-A linked list is made of nodes, and each node then points to the next node (we are covering just a singly linked list here) and the node contains a value. If I find the time I will create a diagram ofor illustration purposes.
+A linked list is made of nodes, and each node then points to the next node (we are covering just a singly linked list here) and the node contains a value. If I find the time I will create a diagram for illustration purposes.
 For this we need to use pointers since we need to point to some object/data in memory. Pointers in Fortran are not quite the same as pointers in other languages i.e. C/C++, but as with all pointers we must protect ourselves and Fortran is no different. 
 
 We start by making a small type that wraps a generic pointer (an unlimited polymorphic pointer) to hold the address of the value of the node, and a pointer of the node type to point to the next item in the list. We aptly name this type - <b>LinkedListNode</b>.
@@ -228,7 +228,7 @@ function atindex(this, index) result(indexnode)
 end function atindex
 ```
 
-And then the important <i>traverse</i> method, which allows us to apply a function to each node in the list, passing in an iterator function with the interface matching. Note the intent(inout) here as it is not a const iterator (we should also do this too) since we will see in a short moment that we want to modify these nodes in the list.
+And then the important <i>traverse</i> method, which allows us to apply a function to each node in the list, passing in an iterator function with the interface matching as below.
 ```fortran
 interface
     subroutine iterator_func(node)
@@ -236,7 +236,8 @@ interface
         type(LinkedListNode), pointer, intent(inout)  :: node
     end subroutine iterator_func
 end interface
-```
+``` 
+Note the intent(inout) here as it is not a const iterator (we should also do this too) since we will see in a short moment that we want to modify these nodes in the list.
 
 With the full function as below.
 ```fortran
