@@ -57,6 +57,27 @@ class Apps extends React.Component {
               </Link>
             </div>
           </div>
+            
+          <div className="card">
+            <div className="card-content">
+              <Link
+              style={{
+                  boxShadow: `none`,
+                  textDecoration: `none`,
+                  color: `inherit`,
+              }}
+              to={`/apps/bitcoin/app`}
+              >
+                <p className="title">
+                  Bitcoin tracker
+                </p>
+                <p className="subtitle">
+                  Provides latest price of bitcoin
+                </p>
+              </Link>
+            </div>
+          </div>
+
         </Layout>
       </div>
     )

@@ -27,7 +27,7 @@ class PeriodicTableApp extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Apps: Refresher" />
+        <SEO title="Apps: PeriodicTable" />
         <App />
       </Layout>
     )
