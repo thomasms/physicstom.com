@@ -20,10 +20,12 @@ Several lessons have been learnt from my maiden exploration in blogging.
   <li>Don't waste time with CSS and styling - content over presentation.</li>
   <li>Content must be useful and meaningful - longer content and less opinions</li>
   <li>Include better figures, images, code snippets</li>
-  <li>Include better figures, images, code snippets</li>
   <li>More appropriate domain name</li>
 </ul>
 
 Taking all these notes on board I hope that physicstom.com will fulfill my passion for outreach, showcasing, and teaching. In addition by using a new platform and framework to build my blog (using Gatsby with AWS hosting) it allows me to use React (the greatest thing since toast for web development) and is far cheaper than my previous setup. And with the name change I am focused on tailoring posts and applications to a more physics and mathematics related agenda. My only hope is that version 0.2 will last longer than verion 0.1. 
 
 The next thing is to write some actual exciting content. That will take some time, until then, I will follow this up with a post from my old blog.
+
+Oh and here is a picture of Monty the cat sitting on the window sill of my old apartment.
+![Monty](./monty.jpg)
