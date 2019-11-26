@@ -9,7 +9,7 @@ This post is about the number 24, my favourite number. Why? Well, not only was i
 
 ![24](./24hours.jpg)
 
-I first became aware of its elegance when studying String Theory. In bosonic string theory it turns out that the ideal number of dimensions is 24 + 2 = 26, (for reasons not included here, check out Dr David Tongs lecture notes [here](http://www.damtp.cam.ac.uk/user/tong/string/string.pdf). Yes, not exactly 24 but the additional 2 dimensions are due to the strings dimensions. To arrive at this, we have made use of a truly wonderful and weird result, first intuited by Ramanujan,
+I first became aware of its elegance when studying String Theory. In bosonic string theory it turns out that the ideal number of dimensions is 24 + 2 = 26, (for reasons not included here, check out Dr David Tongs lecture notes [here](http://www.damtp.cam.ac.uk/user/tong/string/string.pdf)). Yes, not exactly 24 but the additional 2 dimensions are due to the strings dimensions. To arrive at this, we have made use of a truly wonderful and weird result, first intuited by Ramanujan,
 $$
 \sum\limits^{\infty}_{n=1}{n} = - 1/12
 $$.
