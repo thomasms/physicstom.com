@@ -71,7 +71,7 @@ class Table extends React.Component {
     );
   }
 
-  rowMiddleElements(data, color="grey"){
+  rowMiddleElements(data, color="white"){
     return (
       <>
       {this.createElements(data, 2, color)}
@@ -165,16 +165,6 @@ class Table extends React.Component {
     if(this.state.hoveredElement && this.state.hoveredElement.mass > 0){
       info = this.state.hoveredElement.mass;
     }
-
-    /*
-    var selectedElements = "";
-    for(var i = 0; i < this.state.selectedElements.length; i++) {
-      selectedElements += this.state.selectedElements[i];
-      if(i < this.state.selectedElements.length-1){
-        selectedElements += ", ";
-      }
-    }
-    */
 
     const allElements = this.allElements();
     return (
