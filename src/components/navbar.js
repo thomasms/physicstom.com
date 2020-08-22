@@ -39,7 +39,7 @@ class NavBar extends React.Component{
             <div id="navbarMain" 
                 className={`navbar-menu ${this.state.activeMenu ? 'is-active' : ''}`}>
                 <div className="navbar-start">
-                    <a className="navbar-item" href="# ">
+                    <a className="navbar-item" href="#">
                         <Link
                         style={{
                             boxShadow: `none`,
@@ -52,7 +52,7 @@ class NavBar extends React.Component{
                         </Link>
                     </a>
 
-                    <a className="navbar-item" href="# ">
+                    <a className="navbar-item" href="#">
                         <Link
                         style={{
                             boxShadow: `none`,
@@ -69,7 +69,7 @@ class NavBar extends React.Component{
                 <div className="navbar-end">
                 <div className="navbar-item">
                     <div className="buttons">
-                    <a className="button is-primary" href="# ">
+                    <a className="button is-link is-rounded" href="#">
                         <Link
                         style={{
                             boxShadow: `none`,
