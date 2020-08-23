@@ -1,3 +1,32 @@
+
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('../../assets/font/VictorMono/VictorMono-Bold.eot');
+  src: url('../../assets/font/VictorMono/VictorMono-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../../assets/font/VictorMono/VictorMono-Bold.woff2') format('woff2'),
+       url('../../assets/font/VictorMono/VictorMono-Bold.woff') format('woff'),
+       url('../../assets/font/VictorMono/VictorMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Victor Mono';
+  src: url('../../assets/font/VictorMono/VictorMono-BoldItalic.eot');
+  src: url('../../assets/font/VictorMono/VictorMono-BoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('../../assets/font/VictorMono/VictorMono-BoldItalic.woff2') format('woff2'),
+       url('../../assets/font/VictorMono/VictorMono-BoldItalic.woff') format('woff'),
+       url('../../assets/font/VictorMono/VictorMono-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+	src: url(https://lea.verou.me/logo.otf);
+	font-family: 'LeaVerou';
+}
+
+
 html {
     font: Montserrat;
     background: linear-gradient(to bottom, #ffffff3a 0%);
@@ -133,7 +162,12 @@ html {
  * Add back the container background-color, border-radius, padding, margin
  * and overflow that we removed from <pre>.
  */
+code[class*='language-'], pre[class*='language-'] {
+  font-family: 'Victor Mono';
+}
+
  .gatsby-highlight {
+  font-family: 'Victor Mono';
   border-radius: 0.3em;
   margin-top: -20px;
   margin-bottom: 20px;
@@ -145,7 +179,6 @@ html {
   align-items: center;
   justify-content: center;
 }
-
 /**
  * Remove the default PrismJS theme background-color, border-radius, margin,
  * padding and overflow.
@@ -154,10 +187,56 @@ html {
  * 3. Adjust the position of the line numbers
  */
 .gatsby-highlight pre[class*="language-"] {
+  font-family: 'Victor Mono';
   margin: 10;
   padding: 10;
   overflow: initial;
   float: left; /* 1 */
   min-width: 50%; /* 2 */
-  border: 5px solid #4a87c4;
+  /* border: 1px solid #4a87c4; */
+  box-shadow: 4px 4px 10px 1px #484848db;
+  border-radius: 10px;
+}
+
+.gatsby-highlight .token.keyword {
+  color: #ebbead;
+}
+
+
+.gatsby-highlight 
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+        color: #4963e3;
+}
+
+.gatsby-highlight 
+.token.boolean,
+.token.number {
+        color: #55ae6e;
+}
+
+.gatsby-highlight 
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+        color: #ba5f27;
+}
+
+.gatsby-highlight 
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+        color: #8292a2;
+}
+
+.gatsby-highlight 
+.token.punctuation {
+        color: #b34959;
 }
