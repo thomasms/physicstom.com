@@ -13,23 +13,31 @@ class NotFoundPage extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="About" />
         <h4>Some details about me....</h4>
+        <p>I studied physics and mathematics a while ago.</p>
         <p>
-            I studied physics and mathematics a while ago. 
+          I liked it so much I did a PhD in Particle Physics, during which I did
+          a lot of programming.
         </p>
         <p>
-            I liked it so much I did a PhD in Particle Physics, during which I did a lot of programming.
+          I then realised how powerful programming was and got a role as a
+          Software Engineer at a company doing some stuff related to
+          petrochemicals.
         </p>
         <p>
-            I then realised how powerful programming was and got a role as a Software Engineer at a company doing some stuff related to petrochemicals.
+          I then learnt how to <i>actually</i> program, including all about
+          testing and building production software.
         </p>
         <p>
-            I then learnt how to actually program, including all about testing and building production software.
+          After some time I wanted a new challenge, and missed physics a bit.
         </p>
         <p>
-            After some time I wanted a new challenge, and missed physics a bit.
+          Going back to physics I spent some time as a nuclear scientist /
+          software engineer, where I got to do some work on some interesting
+          projects in fusion research.
         </p>
         <p>
-            Now I am a nuclear scientist / software engineer, where I get to do: programming, physics, and research!
+          Now I am a data scientist building ML algorithms for HR (while trying
+          to do some nuclear research on the side).
         </p>
       </Layout>
     )
