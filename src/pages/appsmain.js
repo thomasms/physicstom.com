@@ -4,88 +4,62 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-class Apps extends React.Component {
-  render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+const Apps = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title
 
+  const makeApp = (link, name, desc) => {
     return (
-      <div>
-
-        <Layout location={this.props.location} title={siteTitle}>
-          <SEO title="React Single Page Apps" />
-          <div className="apps-title">
-            Apps
-          </div>
-
-          <div className="card">
-            <div className="card-content">
-              <Link
-              style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`,
-              }}
-              to={`/apps/refresher/app`}
-              >
-                <p className="title">
-                  Refresher
-                </p>
-                <p className="subtitle">
-                  A simple app using cookies to log number of attempts and refreshes to a site
-                </p>
-              </Link>
-            </div>
-          </div>
-            
-          <div className="card">
-            <div className="card-content">
-              <Link
-              style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`,
-              }}
-              to={`/apps/periodictable/app`}
-              >
-                <p className="title">
-                  Periodic Table
-                </p>
-                <p className="subtitle">
-                  A complete and interactive periodic table
-                </p>
-              </Link>
-            </div>
-          </div>
-            
-          <div className="card">
-            <div className="card-content">
-              <Link
-              style={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`,
-              }}
-              to={`/apps/bitcoin/app`}
-              >
-                <p className="title">
-                  Bitcoin tracker
-                </p>
-                <p className="subtitle">
-                  Provides latest price of bitcoin
-                </p>
-              </Link>
-            </div>
-          </div>
-
-        </Layout>
+      <div
+        className="card"
+        style={{ marginTop: 10, marginBottom: 10, borderRadius: 20 }}
+      >
+        <div className="card-content">
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={link}
+          >
+            <p className="title">{name}</p>
+            <p className="subtitle">{desc}</p>
+          </Link>
+        </div>
       </div>
     )
   }
+
+  const apps = [
+    makeApp(
+      `/apps/refresher/app`,
+      `Refresher`,
+      `A simple app using cookies to log number of attempts and refreshes to a site`
+    ),
+    makeApp(
+      `/apps/periodictable/app`,
+      "Periodic Table",
+      "A complete and interactive periodic table"
+    ),
+    makeApp(
+      `/apps/bitcoin/app`,
+      "Bitcoin tracker",
+      "Provides latest price of bitcoin"
+    ),
+  ]
+
+  return (
+    <div>
+      <Layout location={location} title={siteTitle}>
+        <SEO title="React Single Page Apps" />
+        <div className="apps-title">Mini-apps</div>
+        {apps.map(item => item)}
+      </Layout>
+    </div>
+  )
 }
 
 export default Apps
-
 
 export const pageQuery = graphql`
   query {
