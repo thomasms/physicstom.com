@@ -18,6 +18,7 @@ const BlogIndex = ({ data, location }) => {
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        const tags = node.frontmatter.tags ? node.frontmatter.tags : []
         return (
           <div key={node.fields.slug}>
             <h3
@@ -29,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 {title}
               </Link>
-              {node.frontmatter.tags.map(item => {
+              {tags.map(item => {
                 return (
                   <span
                     className="tag is-light is-rounded"
