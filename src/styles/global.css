@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Victor Mono";
   src: url("../../assets/font/VictorMono/VictorMono-Bold.eot");
   src: url("../../assets/font/VictorMono/VictorMono-Bold.eot?#iefix")
@@ -23,7 +23,7 @@
       format("truetype");
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 @font-face {
   src: url(https://lea.verou.me/logo.otf);
