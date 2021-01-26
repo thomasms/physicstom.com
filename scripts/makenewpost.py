@@ -2,8 +2,8 @@ import os
 import time
 
 # blog details
-entry_name = "linemeetsplane"
-long_title = "When a line meets a plane"
+entry_name = "noifs"
+long_title = "I don't like ifs"
 
 # default parameters
 BLOG_FILE = "index.md"
@@ -20,9 +20,9 @@ with open(os.path.join(new_dir, BLOG_FILE), 'wt') as bf:
     bf.write(
 '''---
 title: {}
-date: "2019-01-19T22:12:03.284Z"
-readtime: 10 mins
-tags: []
+date: "2021-01-13T21:52:24.284Z"
+readtime: 4 mins
+tags: ['software', 'SOLID', ']
 ---
 
 Content here....
