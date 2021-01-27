@@ -2,7 +2,7 @@
 title: I don't like ifs
 date: "2021-01-13T21:52:24.284Z"
 readtime: 8 mins
-tags: ["software", "SOLID", "programming"]
+tags: ["software", "SOLID", "programming", "conditional"]
 ---
 
 The `if` statement is fundamental to programming, a core tool in the arsenal of any developer existing today. Hell, I cannot even think of a language that doesn't use them. Well, actually literally after typing that I did a quick bit of research (i.e. Google and Stack Overflow) and came across a few: **Smalltalk**, **Prolog**, and someone mentioned **Haskell**, but I know this not to be true (from the small amount of Haskell I have written - not a lot - I definitely used an if). Given there are over 700, _and counting_, programming languages at the time of writing, almost all of which have an <b><code>if</code></b> construct, then I think you'll all agree it is a 'core', and arguably fundamental, statement. So why do I dislike them?
@@ -29,7 +29,7 @@ def calc_coeff2(obj, b, c):
     return obj.a*b*2.1/(c-0.8)
 ```
 
-In this case we want to make sure `obj` exists and has a valid place in memory - in C++ we would do a null pointer check maybe, or in Javascript we want to check the thing is not undefined. Again, for this function it could be a valid case, we don't want to access a null pointer. One complaint with this version is if we designed the function and code architecture better you wouldn't need a null check. Avoid pointers in C++ by convention and only deal with references, for example, is one way around this, but could restrict you later on - pointers have their uses. In the python example we could by design ensure that obj is never `None`, or better, don't pass in the `obj` to the function, just pass in the parameter `a` instead. For one, it is easier to test and makes it clearer to the caller. But this is a seperate discussion, let's get back on track to the really bad `if`s - the ones involving their ugly, dirty siblings: `else` and the dirtiest of all - `else if`!
+In this case we want to make sure `obj` exists and has a valid place in memory - in C++ we would do a null pointer check maybe, or in Javascript we want to check the thing is not undefined. Again, for this function it could be a valid case, we don't want to access a null pointer. One complaint with this version is if we designed the function and code architecture better you wouldn't need a null check. Avoid pointers in C++ by convention and only deal with references, for example, is one way around this, but could restrict you later on - pointers have their uses. In the python example we could by design ensure that obj is never `None`, or better, don't pass in the `obj` to the function, just pass in the parameter `a` instead. For one, it is easier to test and makes it clearer to the caller. But this is a separate discussion, let's get back on track to the really bad `if`s - the ones involving their ugly, dirty siblings: `else` and the dirtiest of all - `else if`!
 
 Let's start with `else`. Well there is rarely a case for them. I argue that this can always be reduced to a simple if by separating the code into a small function. For example, let's say we have the following function.
 
@@ -120,7 +120,7 @@ def my_cool_func(a, b, c):
     return g*3.6
 ```
 
-which isn't much of an improvement but it is already a bit clearer, and now if I want to change the logic for one calculation I don't have to edit `my_cool_func`. However, this still doesn't address the issue of the `if`s and you may have noticed that we have kept the interface the same for each function, even though most of the don't use `a`, `b`, or `c` in their computation. This however can be used to remove the `if`s.
+which isn't much of an improvement but it is already a bit clearer, and now if I want to change the logic for one calculation I don't have to edit `my_cool_func`. However, this still doesn't address the issue of the `if`s and you may have noticed that we have kept the interface the same for each function, even though some of the functions don't use `a`, `b`, or `c` in their computation. This however can be used to remove the `if`s.
 
 We can define a mapping between the conditions and the functions which would keep the logic the same but make it much more readable.
 
@@ -165,15 +165,16 @@ Now compare this to our starting version with the three conditional cases and th
 
 OK, so what are the downsides? Of course, I am sure you're all shouting at me "What about performance?".
 
-- We are iterating through the whole list each time,
-- We compute `d` and `e` again and again instead of just once
+- We are iterating through the whole list each time.
+- We compute `d` and `e` again and again instead of just once.
 - We pass in `a`, `b`, and `c` and don't even use them sometimes.
+- Overhead of additional function calls.
 
-All valid concerns, and indeed this approach will not always work, but it is instead showing you how to approach it in a different manner, a more functional viewpoint. There are cases when this could work and workarounds can be applied - cache `d` and `e`, use `*args` and `**kwargs` instead of passing `a`, `b`, and `c`, etc. The idea is to redesign code to keep it extensible but closed for modification, all the time making use of **polymorphism** (polymorphic functions). In the long run, your code base will be easier to maintain and cleaner. Always favour small functions with few (if any) `if`s instead of complex, long functions with nested statements.
+All valid concerns, and indeed this approach will not always work, but it is instead showing you how to approach it in a different manner, a more functional viewpoint. There are cases when this could work and workarounds can be applied - cache `d` and `e`, use `*args` and `**kwargs` instead of passing `a`, `b`, and `c`, etc. The idea is to redesign code to keep it extensible but closed for modification, all the time making use of **polymorphism** (polymorphic functions in this case). In the long run, your code base will be easier to maintain and cleaner. Always favour small functions with few (if any) `if`s instead of complex, long functions with nested statements.
 
 Oh, and I am sure you all will have noticed that I still have `if`s in the new code and one `else` but the latter is the one exception I said before (ternary operator) and the other `if`s are of the first kind (the acceptable ones).
 
-_Note: If you are really worried about performance and don't want abstractions and additional function calls bloating out run time, then that is a trade off you need to make. My angle is always readability first and performance second. That doesn't mean write pretty but slow code, it means always think in terms of readability first. You never know before hand where the performance bottlenecks will be and you could waste time trying to optimize a function when it is rarely used. Additionally, with a series of nested conditional statements it could really matter the order in which you define them, which will depend on your requirements and use cases. If you are hitting the last conditional statment 90% of the time, then it is better to reorder to avoid conditional checking everytime._
+_Note: If you are really worried about performance and don't want abstractions and additional function calls bloating out run time, then that is a trade off you need to make (but then you shouldn't be using Python in this case). My angle is always readability first and performance second. That doesn't mean write pretty but slow code, it means always think in terms of readability first. You never know before hand where the performance bottlenecks will be and you could waste time trying to optimize a function when it is rarely used. Additionally, with a series of nested conditional statements it could really matter the order in which you define them, which will depend on your requirements and use cases. If you are hitting the last conditional statment 90% of the time, then it is better to reorder to avoid conditional checking everytime._
 
 Also I came across this site https://francescocirillo.com/pages/anti-if-campaign which also shares my hatred for them.
 
