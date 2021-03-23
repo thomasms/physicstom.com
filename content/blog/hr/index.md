@@ -1,7 +1,7 @@
 ---
 title: My brief moment in HR
 date: "2021-03-20T14:32:24.284Z"
-readtime: 4 mins
+readtime: 2 mins
 tags: ['talk', 'video', 'HR']
 ---
 And now for something completely different.
@@ -14,4 +14,4 @@ Ten months of HR was enough for me to tolerate, and the joke is now up, and I am
 
 Anyway I also gave a 20 minute talk with Al Ademsen about new techniques we can apply in HR from other domains such as marketing, politics and fusion research. See the full video [here](https://youtu.be/UBNTW1YAa8Q).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UBNTW1YAa8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="440" height="315" src="https://www.youtube.com/embed/UBNTW1YAa8Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
