@@ -16,3 +16,5 @@ When I bought my Mac I didn’t get the top range with the fusion drive (I thoug
 ![New setup](./externalhardrive.jpg)
 
 I went with the Transcend 256 GB StoreJet 500 Thunderbolt, from amazon just over £200, and even comes with the Thunderbolt and USB3 cables. In conclusion, my Mac feels fresh and quick, and it’s now portable! I’ve install macOS Sierra on it and all of my applications (it only took 2 hours). I even wrote this blog entry on it.
+
+*EDIT March 2021: As a follow up to this a couple of years later, this is not a long term solution and the connection is not reliable! The system kept freezing due to the connection. In the end I opted to get out my iFixit kit and change the internal drive, it was actually surprisingly easy to do so, taking under an hour to replace and put it back together (of course with the help of YouTube).*

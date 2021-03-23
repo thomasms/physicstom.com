@@ -2,7 +2,7 @@
 title: Grossed out
 date: "2019-02-09T21:11:01.284Z"
 readtime: 1 min
-tags: ['tax', 'income', 'accounting', 'webapp', 'uk']
+tags: ['tax', 'income', 'accounting']
 ---
 
 In the UK we rarely speak about salaries, but in the situation when you’re negotiating a salary for a new role or a possible promotion, the salary is usually given as a gross annual amount. Whilst it is nice to discuss such large numbers, they are sometimes rather abstract, and disconnected from the actual monthly amount we get in our payslips. This is particularly different to other European countries, such as Belgium and the Netherlands, whereby it is common practice to negotiate a monthly net sum, i.e. the actual amount you get in your pocket each month. This, to me at least, makes much more sense.
