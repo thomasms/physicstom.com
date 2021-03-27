@@ -58,12 +58,13 @@ Horrible right?
 
 Well, don't worry about that just simple install pypact by:
 ```bash
-# good to use venvs, of course!
+#! /bin/bash
 pip3 install pypact
 ```
 and then in a few lines you can print the total decay heat at each timestep by doing the following:
 
 ```python
+#!/usr/bin/env python3
 import pypact as pp
 
 filename = "run1.out"
@@ -78,6 +79,7 @@ That's it - 5 lines of code!
 We could take this further by only looking at the decay heat of nuclides starting with the letter T, for each timestep in the output. A useless exercise but can show the power of the library.
 
 ```python
+#!/usr/bin/env python3
 import pypact as pp
 
 filename = "run1.out"
