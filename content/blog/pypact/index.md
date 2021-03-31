@@ -78,7 +78,7 @@ with pp.Reader(filename) as output:
 
 That's it - 5 lines of code!
 
-We could take this further by only looking at the decay heat of nuclides starting with the letter T, for each timestep in the output. A useless exercise but can show the power of the library.
+We could take this further by only looking at the decay heat of nuclides starting with the letter T, for each timestep in the output. A useless exercise nonetheless but it can show the power of the library and how little effort things like this become.
 
 ```python
 #!/usr/bin/env python3
