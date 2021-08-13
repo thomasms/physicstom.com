@@ -103,7 +103,7 @@ OK, so this assumes 365 days in a year (ignoring leap years) and assumes uniform
 
 ---
 
-OK, so everyone normally ends it there and be done with the simple maths, but still that can not be enough, that is why I now take a different approach to the problem. An experimentalists view, if you will. Instead of analytically calculating the probabilities, can perform an experiment to show this is actually true? 
+This is the point where everyone normally ends it and be done with the simple maths, but I think that is not enough. I will now take a different approach to the problem, an experimentalists view, if you will. Instead of analytically calculating the probabilities, can we perform an experiment (or series of experiments) to show this is actually true? 
 
 Just to clarify, I will not be inviting large groups of random people into my house and count them, I will simply write a small program to illustrate this effect (we will use python for simplicity, but if we want to run large scale simulations, C++ would be better for this). This will be a very simple Monte Carlo simulation (something we like to do a lot of in Particle and Nuclear Physics).
 
