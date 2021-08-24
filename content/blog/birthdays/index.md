@@ -1,7 +1,7 @@
 ---
 title: Birthday Monte Carlo
 date: "2021-08-03T13:19:24.284Z"
-readtime: 4 mins
+readtime: 9 mins
 tags: ['code']
 ---
 
@@ -158,10 +158,10 @@ We can go to a million (takes a few minutes on single core) but still we don't g
 
 ![1000000](./mc_1000000.png)
 
-It turns out that this is a common problem in physics too, most of the time we are interested in the very rare events and want to examine them. And in those cases there is no analytical solution, so we have to use MC methods. In those cases we have techiques such as reweighting and other variance reduction methods. However, those methods won't work here without some other knowledge or leverging some of the maths, which would then be in contradiction to the purpose of this post.
+It turns out that this is a common problem in physics too, most of the time we are interested in the very rare events and want to examine them in isolation. And in those cases there is no analytical solution, so we have to use MC methods. In those cases we have techiques such as reweighting and other variance reduction methods. Hopefully if I have time I will do a part II to show how we can apply such a technique to this problem. It would also be interesting to examine different distributions, include leap years, and look at smarter MC techniques in part II. For now I leave it here.
 
-One powerful application of MC methods, such as what I have shown here, is when you have no analytical way of solving a problem or equation. Since compute power is cheap, just throw CPU at the problem is usually the moto in Physics (well not always, but sometimes).
+Final thought - while in this case MC was not really necessary, since the maths was easy, it is a very useful tool when you have no analytical way of solving a problem or equation and since compute power is cheap, **just throw CPUs at the problem** (or GPUs too!).
 
-If I have time, I will make a follow up for this to examine different distributions, include leap years, and look at smarter MC techniques. But for now I leave it here.
+*All the code to reproduce these plots can be found on this [gist](https://gist.github.com/thomasms/2fdeb1f0dee980182310c1866d1516e9)*
 
 The end.

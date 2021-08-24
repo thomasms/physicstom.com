@@ -5,8 +5,8 @@ import numpy as np
 import matplotlib.font_manager as fm
 import matplotlib.pyplot as plt
 
-gs_font = fm.FontProperties(
-                fname='/System/Library/Fonts/Supplemental/GillSans.ttc')
+# gs_font = fm.FontProperties(
+#                 fname='/System/Library/Fonts/Supplemental/GillSans.ttc')
 thisdir = os.path.dirname(os.path.realpath(__file__))
 plt.style.use(os.path.join(thisdir, 'style.mplstyle'))
 
@@ -27,17 +27,13 @@ def mc(nsamples=1000):
     return [count_until_match() for _ in range(nsamples)]
 
 def prob_no_match(n):
-    """analytical result using np long double to avoid overflow"""
-    return np.longdouble(math.factorial(n)*math.comb(365,n))/np.longdouble(365**n)
-
-def prob_no_match2(n):
     """analytical result using integers - python can handle arb large numbers"""
     return math.factorial(n)*math.comb(365,n)/(365**n)
 
 def plot_actual(logy=False, show_match=True, show_no_match=True):
     x = range(1, 366)
-    y = [prob_no_match2(n) for n in x]
-    y2 = [1 - prob_no_match2(n) for n in x]
+    y = [prob_no_match(n) for n in x]
+    y2 = [1 - prob_no_match(n) for n in x]
 
     fig, ax1 = plt.subplots()
     plt.title('Birthday problem')
