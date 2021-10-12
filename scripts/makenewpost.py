@@ -1,9 +1,9 @@
 import os
-import time
+from datetime import datetime
 
 # blog details
-entry_name = "hr"
-long_title = "My brief moment in HR"
+entry_name = "epics"
+long_title = "The epic software controlling an accelerator near you"
 
 # default parameters
 BLOG_FILE = "index.md"
@@ -19,14 +19,14 @@ os.mkdir(new_dir)
 with open(os.path.join(new_dir, BLOG_FILE), 'wt') as bf:
     bf.write(
 '''---
-title: {}
-date: "2021-03-20T14:32:24.284Z"
+title: {0}
+date: "{1}"
 readtime: 4 mins
-tags: ['talk', 'video', 'HR']
+tags: ['software', 'physics']
 ---
 
 Content here....
-'''.format(long_title)
+'''.format(long_title, datetime.now().isoformat())
     )
 
 
