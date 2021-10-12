@@ -206,11 +206,12 @@ pre[class*="language-"] {
   /* border: 1px solid #4a87c4; */
   box-shadow: 4px 4px 10px 1px #484848db;
   border-radius: 10px;
+  background: #fafaf9;
 }
 
-.gatsby-highlight .token.keyword {
+/* .gatsby-highlight .token.keyword {
   color: #ebbead;
-}
+} */
 
 .gatsby-highlight .token.operator,
 .token.entity,
