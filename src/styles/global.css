@@ -244,3 +244,7 @@ pre[class*="language-"] {
 .gatsby-highlight .token.punctuation {
   color: #b34959;
 }
+
+ul {
+  margin-left: 40px;
+}
