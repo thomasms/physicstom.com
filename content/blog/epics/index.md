@@ -29,7 +29,7 @@ EPICS is now over 30 years old and still continues to be developed & released at
 It is multi-platform, supporting Linux, Windows, Mac.
 
 
-## Well that's nice, so who uses it?
+### Well that's nice, so who uses it?
 
 As I said before it is typically used in accelerators, but it is also used to control fusion reactors such as ITER and JET.
 Besides this, it is also used in telescopes and it has even been used to [brew beer](https://epics.anl.gov/tech-talk/2014/msg01137.php).
@@ -49,7 +49,7 @@ To name a few places, big EPICS players are:
 - Australian Synchrotron, Australia
 
 
-## OK, but what exactly is EPICS?
+### OK, but what exactly is EPICS?
 
 As mentioned previously, EPICS uses a client-server architecture, where clients are programs that require access to Process Variables (PVs - more on that later) to carry out their purpose.
 The service that a server provides is access to a Process Variable.
@@ -58,6 +58,8 @@ Here we define a **Process Variable as a named piece of data** (integer, float, 
 **PVs are the currency of EPICS.**
 
 A few examples of PVs are shown in the table below.
+
+
 |                      Name | Value          |
 | ------------------------: | -------------- |
 |            S1:VAC:reading | 5.63e-0.7 torr |
@@ -86,7 +88,7 @@ However, version 7 supports both protocols, this is the current major version. T
 Any tool/program/application that abides by the CA or PVA protocols can be described as "EPICS compliant". Traditionally EPICS is a toolkit, providing small tools to use these protocols to "use EPICS", however, with recent versions some parts can be considered a library or set of APIs to build custom tools as well.
 
 
-## Tell me more...
+### Tell me more...
 
 EPICS consists of a few major components:
 - **IOC** - Input/Output Controller. The core of EPICS. Any platform that can support EPICS run time databases together with the other software components described in the manual. They are essentially servers, but can also be clients of other IOCs. One example is a workstation. Another example is a VME/VXI based system using vxWorks or RTEMS as the realtime operating system.
@@ -144,7 +146,7 @@ These are not direct mappings but can help when trying to understand the EPICS d
 With respect to the last one - the foriegn key - is not quite the same but similar.
 
 
-## Notes on PVA
+### Notes on PVA
 **What is PVAccess (PVA)?**
 The PVAccess network protocol is a hybrid supporting request/response, and publish/subscribe operations.
 
@@ -160,7 +162,7 @@ Four protocol operations are supported by PVXS.
 Get, Put, Monitor, and RPC are to the PVA protocol what GET, PUT, POST are to the HTTP protocol.
 
 
-## OK, remind me again what a PV is?
+### OK, remind me again what a PV is?
 As mentioned before, in the EPICS world a Process Variable (PV) refers to the idea of a globally addressed data structure.
 An EPICS control system is composed of many PVs (in the millions for large facilities).
 The present value of a PV is modified by a combination of remote operations via CA and/or PVA, and via local processing (eg. values read from local hardware).
@@ -182,7 +184,7 @@ The main difference being that while a URL is hierarchical, having a hostname an
 The namespace of PV names is by default all local IP subnets (broadcast domains). This can be made more complicated though the specifics of client-server network configuration.
 
 
-## TCP & UDP
+### TCP & UDP
 As mentioned previously, EPICS uses UDP & TCP to communicate over the distributed network. 
 The Internet Protocol (IP) basically consists of UDP and TCP. 
 Ports 5064 (CA port) & 5065 (CA beacon port) are apparently used for EPICS UDP sockets. 
@@ -233,7 +235,7 @@ export EPICS_CA_ADDR_LIST="123.45.1.255 123.45.2.14 123.45.2.108"
 
 But generally these variables should not be changed from their defaults unless you know what you're doing....
 
-## Anything else I should know about EPICS?
+### Anything else I should know about EPICS?
 Yes, there is much more to learn about it and typically an EPICS training course can take a full week just to learn the basics.
 
 Here are some nice links and references if you want to know more.
