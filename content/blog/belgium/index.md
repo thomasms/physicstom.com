@@ -18,7 +18,7 @@ After living in the Netherlands for some time, I can tell you that Belgian food 
 | Tesco               | Albert Heijn / Carrefour     |
 | Waitrose            | (Ahold) Delhaize             |
 | Sainsburys          | Carrefour / (Ahold) Delhaize |
-| Asda                | Colruyt                      |
+| Asda                | Colruyt / Okay               |
 
 Now there are others of course, but these are the main ones. Delhaize is by far the most expensive but does have (most often) the nicest selection of food - their Cheddar Cheese is quite good, but you can also get Cathedral City Cheddar Cheese at Carrefour.
 
