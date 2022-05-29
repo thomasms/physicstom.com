@@ -15,6 +15,8 @@ It was quite easy to do, once I was given the correct information on the rates a
 
 $$
 \alpha_{m} = (1 + \alpha_{y})^{\frac{1}{12}} - 1
+$$
+$$
 X_{m} = \frac{P(1+\alpha_{m})^{n}}{\sum_{i}^{n}{(1+\alpha_{m})^{i}}}
 $$
 

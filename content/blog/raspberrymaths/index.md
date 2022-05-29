@@ -53,7 +53,7 @@ $$
 \beta_{year} = 29 \textrm{ Rs}
 $$ 
 
-Where, Rs = &#127827; (that should be a raspberry but the strawberry emoji is the closest available).
+Where, Rs is the number of raspberries.
 
 Feel free to play with the numbers below to see how much it costs you! Move the range bar to the left for more idle and right for more load.
 <form oninput="x.value=parseFloat(parseFloat(a.value)*0.44676*(1.4*parseFloat(b.value)+0.6*(100-parseFloat(b.value)))).toFixed(2);r.value=parseFloat(parseFloat(x.value)*5.55).toFixed(0)">
@@ -62,7 +62,7 @@ Idle <input type="range" id="b" value="5"> Load
 
 Cost of one kWh = <input type="number" value="0.18" id="a" name="quantity" min="0" step="0.01"/>
 
-<b>Cost per year</b> = €<output name="x" for="a b">5.15</output> or <output name="r" for="a b">28.6</output>&#127827;
+<b>Cost per year</b> = &#8364;<output name="x" for="a b">5.15</output> or <output name="r" for="a b">28.6</output> Rs
 </form>
 
-Update: As someone has pointed out, I failed to take into account the cost of the machine itself (about €80) and the expected life expectancy. Assuming it would last for 5 years then that does indeed put our cost up to about € 21/22 per year. Still small compared to the equivalent setup on the cloud!
+Update: As someone has pointed out, I failed to take into account the cost of the machine itself (about &#8364;80) and the expected life expectancy. Assuming it would last for 5 years then that does indeed put our cost up to about &#8364; 21/22 per year. Still small compared to the equivalent setup on the cloud!
