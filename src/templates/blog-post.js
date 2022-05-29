@@ -3,11 +3,11 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Commento from "../components/commento"
 import { rhythm, scale } from "../utils/typography"
 
-import "katex/dist/katex.min.css";
+import "katex/dist/katex.min.css"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
+        <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
@@ -38,12 +38,13 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         >
-          {post.frontmatter.date} 
-          <span 
+          {post.frontmatter.date}
+          <span
             style={{
-              marginLeft: "80px", 
-            }}>
-          Readtime: <b>{post.frontmatter.readtime}</b>
+              marginLeft: "80px",
+            }}
+          >
+            Readtime: <b>{post.frontmatter.readtime}</b>
           </span>
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -104,7 +105,6 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         tags
         readtime
-
       }
     }
   }

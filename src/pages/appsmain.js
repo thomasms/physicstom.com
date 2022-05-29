@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const Apps = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -51,9 +51,11 @@ const Apps = ({ data, location }) => {
   return (
     <div>
       <Layout location={location} title={siteTitle}>
-        <SEO title="React Single Page Apps" />
+        <Seo title="React Single Page Apps" />
         <div className="apps-title">Mini-apps</div>
-        {apps.map(item => item)}
+        {apps.map((item, i) => (
+          <div key={i}>{item}</div>
+        ))}
       </Layout>
     </div>
   )

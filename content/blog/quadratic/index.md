@@ -69,7 +69,7 @@ $$
 and then our beloved formula is slightly simpler (remember that this applies when a = 1 only)
 $$
 x = \frac{-b \pm \sqrt{b^{2} - 4c}}{2}
-$$.
+$$
 
 The first thing to notice is that we can have a problem with the square root if $b^{2} - 4c \lt 0 $. This of course would lead to 2 complex roots, since $ \sqrt{-1} = i $, where $ i $ indicates an imaginary unit.
 We then have 3 possible regimes of roots: 2 real roots, 2 complex roots or 2 degenerate roots (the same root twice), see the below image.

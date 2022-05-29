@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
+import { Chart as ChartJS } from "chart.js/auto"
 import { Line } from "react-chartjs-2"
 
 import Layout from "../../../components/layout"
-import SEO from "../../../components/seo"
+import Seo from "../../../components/seo"
 
 import "./app.scss"
 
@@ -14,28 +15,26 @@ const plot_options = {
   //     from: 0,
   //   },
   // },
-  legend: {
-    display: false,
-  },
-  tooltips: {
-    enabled: true,
+  plugins: {
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      enabled: true,
+    },
   },
   scales: {
-    xAxes: [
-      {
+    x: {
+      display: false,
+      grid: {
         display: false,
-        gridLines: {
-          display: false,
-        },
       },
-    ],
-    yAxes: [
-      {
-        gridLines: {
-          display: false,
-        },
+    },
+    y: {
+      grid: {
+        display: false,
       },
-    ],
+    },
   },
 }
 
@@ -48,16 +47,16 @@ function App() {
 
   useEffect(() => {
     fetch(CURRENT_PRICE_URL)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         const price = parseFloat(data["bpi"]["USD"]["rate"].replace(",", ""))
         setPrice(price)
         return price
       })
-      .then(price =>
+      .then((price) =>
         fetch(HISTORICAL_PRICE_URL)
-          .then(res => res.json())
-          .then(data => {
+          .then((res) => res.json())
+          .then((data) => {
             // console.log(data["bpi"])
             var prices = []
             for (const [key, value] of Object.entries(data["bpi"])) {
@@ -71,17 +70,17 @@ function App() {
 
   const line_data = {
     // add an extra label with null to make the final marker visible
-    labels: [...historicalPrices.map(item => item.date), ""],
+    labels: [...historicalPrices.map((item) => item.date), ""],
     datasets: [
       {
         label: "$",
-        data: historicalPrices.map(item => item.value),
+        data: historicalPrices.map((item) => item.value),
         fill: false,
         borderColor: "rgba(255, 87, 51, 0.8)",
         pointBackgroundColor: [
           ...historicalPrices
             .slice(0, historicalPrices.length - 1)
-            .map(item => "white"),
+            .map((item) => "white"),
           "red",
         ],
         pointRadius: 4,
@@ -100,7 +99,7 @@ function App() {
         <Line data={line_data} options={plot_options} />
       </div>
       <footer className="bitcoin-note">
-        <div class="content has-text-centered">
+        <div className="content has-text-centered">
           <p>
             Powered by{" "}
             <a href="https://www.coindesk.com/price/bitcoin">CoinDesk</a>{" "}
@@ -115,7 +114,7 @@ const BitCoinApp = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Apps: Bitcoin tracker" />
+      <Seo title="Apps: Bitcoin tracker" />
       <App />
     </Layout>
   )

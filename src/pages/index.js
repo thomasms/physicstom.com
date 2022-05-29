@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 import "./index.scss"
@@ -14,7 +14,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <Seo title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -30,11 +30,12 @@ const BlogIndex = ({ data, location }) => {
               <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 {title}
               </Link>
-              {tags.map(item => {
+              {tags.map((item, i) => {
                 return (
                   <span
                     className="tag is-light is-rounded"
                     style={{ marginLeft: 10, fontWeight: "normal" }}
+                    key={i}
                   >
                     {item}
                   </span>

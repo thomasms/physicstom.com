@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react"
+import { graphql } from "gatsby"
 
 import Layout from "../../../components/layout"
-import SEO from "../../../components/seo"
+import Seo from "../../../components/seo"
 
-import Table from './Table.js';
+import Table from "./Table.js"
 
 class App extends Component {
   render() {
@@ -17,7 +18,7 @@ class App extends Component {
           <Table />
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -27,21 +28,21 @@ class PeriodicTableApp extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Apps: PeriodicTable" />
+        <Seo title="Apps: PeriodicTable" />
         <App />
       </Layout>
     )
   }
 }
 
-export default PeriodicTableApp;
+export default PeriodicTableApp
 
 export const pageQuery = graphql`
-query {
-  site {
-    siteMetadata {
-      title
+  query {
+    site {
+      siteMetadata {
+        title
+      }
     }
   }
-}
 `

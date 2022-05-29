@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 class NotFoundPage extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class NotFoundPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="About" />
+        <Seo title="About" />
         <h4>Some details about me....</h4>
         <p>I studied physics and mathematics a while ago.</p>
         <p>
