@@ -26,17 +26,30 @@ $beige-lighter: #eff0eb;
 // $input-shadow: none;
 
 // Import only what you need from Bulma
-@import "../../../../node_modules/bulma/sass/utilities/_index.scss";
+
+// Import only what you need from Bulma
+@import "../../../../node_modules/bulma/sass/utilities/_all.sass";
+// @import "../../../../node_modules/bulma/sass/base/_all.sass";
+@import "../../../../node_modules/bulma/sass/elements/button.sass";
+@import "../../../../node_modules/bulma/sass/elements/container.sass";
+@import "../../../../node_modules/bulma/sass/elements/form.sass";
+@import "../../../../node_modules/bulma/sass/elements/title.sass";
+@import "../../../../node_modules/bulma/sass/components/card.sass";
+@import "../../../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../../../node_modules/bulma/sass/layout/section.sass";
+
+// @import "../../../../node_modules/bulma/sass/utilities/_index.scss";
 // @import "../../../../node_modules/bulma/sass/utilities/_all.sass";
 // @import "../../../../node_modules/bulma/sass/base/_all.sass";
-@import "../../../../node_modules/bulma/sass/elements/button.scss";
-// @import "../../../../node_modules/bulma/sass/elements/form.sass";
-@import "../../../../node_modules/bulma/sass/elements/title.scss";
-@import "../../../../node_modules/bulma/sass/components/card.scss";
-@import "../../../../node_modules/bulma/sass/components/navbar.scss";
-@import "../../../../node_modules/bulma/sass/layout/container.scss";
-@import "../../../../node_modules/bulma/sass/layout/hero.scss";
-@import "../../../../node_modules/bulma/sass/layout/section.scss";
+// @import "../../../../node_modules/bulma/sass/elements/button.scss";
+// // @import "../../../../node_modules/bulma/sass/elements/form.sass";
+// @import "../../../../node_modules/bulma/sass/elements/title.scss";
+// @import "../../../../node_modules/bulma/sass/components/card.scss";
+// @import "../../../../node_modules/bulma/sass/components/navbar.scss";
+// @import "../../../../node_modules/bulma/sass/layout/container.scss";
+// @import "../../../../node_modules/bulma/sass/layout/hero.scss";
+// @import "../../../../node_modules/bulma/sass/layout/section.scss";
 
 .bitcoin-chart {
   font-size: 12px;

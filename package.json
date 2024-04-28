@@ -2,13 +2,13 @@
   "name": "PhysicsTom",
   "private": true,
   "description": "A dumping ground for ideas, thoughts and projects by Thomas Stainer",
-  "version": "0.1.0",
-  "author": "Thomas Stainer <stainer.tom@gmail.com>",
+  "version": "0.2.0",
+  "author": "Thomas Stainer <tom@physicstom.com>",
   "bugs": {
     "url": "physicstom.com"
   },
   "dependencies": {
-    "bulma": "^1.0.0",
+    "bulma": "^0.9.4",
     "chart.js": "^3.7.1",
     "gatsby": "^5.13.4",
     "gatsby-plugin-feed": "^5.13.1",
