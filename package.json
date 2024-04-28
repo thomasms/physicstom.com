@@ -16,7 +16,7 @@
     "gatsby-plugin-google-analytics": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-offline": "^5.13.0",
+    "gatsby-plugin-offline": "^6.13.2",
     "gatsby-plugin-react-helmet": "^5.13.0",
     "gatsby-plugin-sass": "^5.13.0",
     "gatsby-plugin-sharp": "^5.13.1",
