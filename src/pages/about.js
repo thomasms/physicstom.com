@@ -18,9 +18,18 @@ class NotFoundPage extends React.Component {
           Then I did a PhD in Particle Physics, which involved a lot of
           programming.
         </p>
-        <p>Then I did some more programming, but now for money.</p>
         <p>
-          And now I write documents about software and programming for money.
+          I continue to do programming and develop software as much as I can
+          before AI takes all the fun out of it.
+        </p>
+        <p>
+          I am hoping there will still be some humans left in this business for
+          the rest of my career, otherwise I will have to find something else to
+          do..... like gardening.
+        </p>
+        <p>
+          No, I don't like gardening. Perhaps, I will start a food truck
+          business. I like food.
         </p>
       </Layout>
     )
