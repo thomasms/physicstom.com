@@ -41,10 +41,16 @@ const Apps = ({ data, location }) => {
       "Periodic Table",
       "A complete and interactive periodic table"
     ),
+    // disabled as APIs now require API keys
+    // makeApp(
+    //   `/apps/bitcoin/app`,
+    //   "Bitcoin tracker",
+    //   "Provides latest price of bitcoin"
+    // ),
     makeApp(
-      `/apps/bitcoin/app`,
-      "Bitcoin tracker",
-      "Provides latest price of bitcoin"
+      `/apps/mortgagecalc/app`,
+      "A Mortgage calculator",
+      "Provides a simple mortgage calculator"
     ),
   ]
 

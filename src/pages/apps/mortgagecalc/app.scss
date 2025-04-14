@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+.app-mortgage-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 200px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;  /* Adjust width as necessary */
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  align-items: center;       /* Centers items vertically */
+  margin-bottom: 10px;
+}
+
+label {
+  flex: 0 0 50%;     /* Flex-basis of 50%, no grow, no shrink */
+  text-align: right; /* Right align the text */
+  margin-right: 10px; /* Space between label and input box */
+}
+
+input {
+  flex: 1;           /* Takes up the rest of the space */
+  padding: 4px;
+  text-align: right; /* Right align the text */
+  max-width: 180px;  /* Ensures inputs are not too small */
+  min-width: 140px;  /* Ensures inputs are not too small */
+}
+
+.App-header {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.payment-display {
+  font-weight: bold;
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: red; /* Specifies the color of the underline */
+  text-decoration-thickness: 2px; /* Specifies the thickness of the underline */
+}
