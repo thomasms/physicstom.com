@@ -13,7 +13,6 @@ The purpose of this post is not to show the standard reasonings shown everywhere
 
 In python we can write a simple function to simulate one game using uniform distribution sampling, as below.
 ```python
-
 def one_game(
     swap: Optional[bool] = False, nboxes: Optional[int] = 3
 ) -> int:
