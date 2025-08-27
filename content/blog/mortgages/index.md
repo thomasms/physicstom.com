@@ -17,7 +17,7 @@ $$
 \alpha_{m} = (1 + \alpha_{y})^{\frac{1}{12}} - 1
 $$
 $$
-X_{m} = \frac{P(1+\alpha_{m})^{n}}{\sum_{i}^{n}{(1+\alpha_{m})^{i}}}
+X_{m} = \frac{P(1+\alpha_{m})^{n}}{\sum_{i}^{n-1}{(1+\alpha_{m})^{i}}}
 $$
 
 Where $X_{m}$ is the monthly payment, $P$ is the loan principle (how much you want to borrow from the bank), $\alpha_{y}$ is the annual interest rate, $\alpha_{m}$ is the monthly interest rate, and $n$ is the number of payment periods.
@@ -172,4 +172,56 @@ def plot_2d() -> Figure:
 
 Now let's go through the derivation of the original equation at the top of this page.
 
-...to finish later....
+The best way to derive this is to first make a table of payment periods and see if we can find a pattern, on the understanding that the payment $X$ each period is fixed throughout the whole payment loan period $n$, as is the interest rate $\alpha$. The Principle $P$ is also fixed of course (as this is how much you plan to borrow). Now we can make a table of $i$, to indicate how many payments we have made (each month or year, it doesn't matter at this point), the amount paid off, which is just $iX$, and the amount remaining, $R$.
+
+
+|  $i$  |  paid off | remaining, $R$ |
+| :----: | :----: | :----: |
+| 1 | $X$  | $P(1+\alpha) - X$
+| 2 | $2X$ | $[P(1+\alpha) - X](1+\alpha) - X$
+| 3 | $3X$ | $[[P(1+\alpha) - X](1+\alpha) - X](1+\alpha) - X$
+
+and so on....
+
+If you're willing to follow this and factorise, or just believe me, you will end up with the following for the amount remaining $R_k$ at a given $i = k$.
+
+$$
+\begin{aligned}
+R_k = P(1+\alpha)^k - X_k\sum_{j=1}^{k-1}(1+\alpha)^j
+\end{aligned}
+$$
+
+Now before we move on, a quick explanation on how I filled in the remainder column. The idea is that after every payment you're taking off that amount, not from the principle, but from the principle multiplied by the interest (see $i=1$). For $i=2$ we then do the same but now on $R_{1}$, not on $P$ this time, as the idea of compound interest is working against us (unlike for us when we invest). Therefore we have $R_{1}(1+\alpha) - X$ which is actually $[P(1+\alpha) - X](1+\alpha) - X$. Rewriting the table in this way makes it much clearer what's going on.
+
+
+|  $i$  |  paid off | remaining, $R$ |
+| :----: | :----: | :----: |
+| 1 | $X$  | $P(1+\alpha) - X$
+| 2 | $2X$ | $R_1(1+\alpha) - X$
+| 3 | $3X$ | $R_2(1+\alpha) - X$
+| k | $kX$ | $R_{k-1}(1+\alpha) - X$
+
+
+Now back to the earlier equation (I was unable to get the equation label working in markdown) for $R_k$. When $k=n$ we are at the end of our payment period and in theory (if you've not missed any payments) the remainder should be 0. So we have:
+
+$$
+\begin{aligned}
+0 =P(1+\alpha)^n - X\sum_{j=1}^{n-1}(1+\alpha)^j \\
+
+P(1+\alpha)^n = X\sum_{j=1}^{n-1}(1+\alpha)^j \\
+
+X = \frac{P(1+\alpha)^{n}}{\sum_{j=1}^{n-1}{(1+\alpha)^{j}}}
+\end{aligned}
+$$
+
+which is what I promised at the start.
+
+Now the only thing remaining is the small issue of annual $\alpha_y$ versus monthly $\alpha_m$ interest rate, which is simply related by $(1 + \alpha_{y}) = (1 + \alpha_{y})^{12}$, or, as I mentioned at the top of this post:
+
+$$
+\alpha_{m} = (1 + \alpha_{y})^{\frac{1}{12}} - 1
+$$
+
+This is plain to see since interest rates are typically given per annum and therefore after one year of a liability of $A$ you pay $A(1+\alpha_{y})$, but in our calculations we want to know per month.
+
+To be justified better.....
