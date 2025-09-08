@@ -5,7 +5,7 @@ readtime: 3 mins
 tags: ['mortgage','loan','finance']
 ---
 
-I always get annoyed when finacial products are sold to you without any explaination of how they come to these magical numbers. When you question the sales person how these figures came out, they always come back blankly with "it's very complicated but our system does it for us". Hogwash. The problem can always be broken down and understood, it is just they are unwilling to explain it, or normally, simply unable to explain it. I bringeth an example on mortgages.
+I always get annoyed when financial products are sold to you without any explaination of how they come to these magical numbers. When you question the sales person how these figures came out, they always come back blankly with "it's very complicated but our system does it for us". Hogwash. The problem can always be broken down and understood, it is just they are unwilling to explain it, or normally, simply unable to explain it. I bringeth an example on mortgages.
 
 A friend recently asked me to help understand their mortgage proposal from the bank, and I gladly met the challenge. He explained that the bank produced a spreadsheet with monthly payments but no explaination on how this was calculated and he wanted to know how it works.
 
@@ -75,7 +75,7 @@ get_monthly_payment(300_000, 0.056, 25)
 Note that in the first case the total interest for the full loan and period is £63,504 (21.17% of the principle amount), whereas in the latter case this is 83.51% of the principle amount, at £250,530 in interest!
 
 
-### Plotting
+### The plot
 
 To show a visual representation of how the monthly payments change with the interest rate, we can plot this as below.
 
@@ -168,7 +168,7 @@ def plot_2d() -> Figure:
     return fig
 ```
 
-### Derivation
+### The derivation
 
 Now let's go through the derivation of the original equation at the top of this page.
 
@@ -222,6 +222,9 @@ $$
 \alpha_{m} = (1 + \alpha_{y})^{\frac{1}{12}} - 1
 $$
 
-This is plain to see since interest rates are typically given per annum and therefore after one year of a liability of $A$ you pay $A(1+\alpha_{y})$, but in our calculations we want to know per month.
+This is plain to see since interest rates are typically given per annum and therefore after one year of a liability of $A$ you pay $A(1+\alpha_{y})$, but in our calculations we want to know per month, so you pay $A(1+\alpha_{m})^{12}$. QED.
 
-To be justified better.....
+
+### The app
+
+If you've followed this far, then congratulations, you deserve to use the little mortgage calculator app on my site [here](https://www.physicstom.com/apps/mortgagecalc/app/). Now give yourself a biscuit.
