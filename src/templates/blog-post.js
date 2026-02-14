@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Commento from "../components/commento"
+import Giscus from "../components/giscus"
 import { rhythm, scale } from "../utils/typography"
 
 import "katex/dist/katex.min.css"
@@ -53,7 +53,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Commento />
+        <Giscus />
         <Bio />
 
         <ul
