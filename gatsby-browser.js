@@ -1,3 +1,6 @@
+// base typography first, so later styles override it as before
+import "./src/styles/typography.css"
+
 // custom typefaces
 import "typeface-montserrat"
 import "typeface-merriweather"
