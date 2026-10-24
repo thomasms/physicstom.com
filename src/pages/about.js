@@ -11,7 +11,6 @@ class NotFoundPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Seo title="About" />
         <h4>Some details about me....</h4>
         <p>I studied physics and mathematics a while ago.</p>
         <p>
@@ -37,6 +36,8 @@ class NotFoundPage extends React.Component {
 }
 
 export default NotFoundPage
+
+export const Head = () => <Seo title="About" />
 
 export const pageQuery = graphql`
   query {

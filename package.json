@@ -5,68 +5,68 @@
   "version": "0.2.0",
   "author": "Thomas Stainer <tom@physicstom.com>",
   "bugs": {
-    "url": "physicstom.com"
+    "url": "https://github.com/thomasms/physicstom.com/issues"
   },
   "dependencies": {
     "bulma": "^0.9.4",
-    "chart.js": "^3.7.1",
-    "gatsby": "^5.13.4",
-    "gatsby-plugin-feed": "^5.13.1",
-    "gatsby-plugin-gatsby-cloud": "^5.13.1",
-    "gatsby-plugin-google-analytics": "^5.13.1",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-offline": "^6.13.2",
-    "gatsby-plugin-react-helmet": "^6.13.1",
-    "gatsby-plugin-sass": "^6.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-plugin-typography": "^5.13.1",
-    "gatsby-remark-copy-linked-files": "^6.13.1",
-    "gatsby-remark-images": "^7.13.1",
-    "gatsby-remark-katex": "^7.13.1",
-    "gatsby-remark-prismjs": "^7.13.1",
-    "gatsby-remark-responsive-iframe": "^6.13.1",
-    "gatsby-remark-smartypants": "^6.13.1",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-remark": "^6.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
+    "chart.js": "^4.6.1",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-feed": "^5.16.0",
+    "gatsby-plugin-image": "^3.16.0",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-offline": "^6.16.0",
+    "gatsby-plugin-sass": "^6.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-plugin-typography": "^5.16.0",
+    "gatsby-remark-copy-linked-files": "^6.16.0",
+    "gatsby-remark-images": "^7.16.0",
+    "gatsby-remark-katex": "^7.16.0",
+    "gatsby-remark-prismjs": "^7.16.0",
+    "gatsby-remark-responsive-iframe": "^6.16.0",
+    "gatsby-remark-smartypants": "^6.16.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-remark": "^6.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
     "katex": "^0.13.24",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
-    "react-chartjs-2": "^4.1.0",
-    "react-cookie": "^4.1.1",
+    "react-chartjs-2": "^5.3.1",
+    "react-cookie": "^8.1.2",
     "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
     "react-typography": "^0.16.23",
-    "sass": "^1.75.0",
+    "sass": "^1.106.1",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "typography": "^0.16.21",
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "prettier": "^3.9.10"
   },
   "homepage": "https://github.com/thomasms",
   "keywords": [
     "gatsby",
     "physics",
     "programming",
-    "raect"
+    "react"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/thomasms/physicstom.com.git"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "deploy": "gatsby-plugin-s3 deploy",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

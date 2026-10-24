@@ -28,7 +28,6 @@ class PeriodicTableApp extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Seo title="Apps: PeriodicTable" />
         <App />
       </Layout>
     )
@@ -36,6 +35,8 @@ class PeriodicTableApp extends React.Component {
 }
 
 export default PeriodicTableApp
+
+export const Head = () => <Seo title="Apps: PeriodicTable" />
 
 export const pageQuery = graphql`
   query {

@@ -57,7 +57,6 @@ const Apps = ({ data, location }) => {
   return (
     <div>
       <Layout location={location} title={siteTitle}>
-        <Seo title="React Single Page Apps" />
         <div className="apps-title">Mini-apps</div>
         {apps.map((item, i) => (
           <div key={i}>{item}</div>
@@ -68,6 +67,8 @@ const Apps = ({ data, location }) => {
 }
 
 export default Apps
+
+export const Head = () => <Seo title="React Single Page Apps" />
 
 export const pageQuery = graphql`
   query {

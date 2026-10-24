@@ -14,7 +14,6 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -57,6 +56,8 @@ const BlogIndex = ({ data, location }) => {
 
 export default BlogIndex
 
+export const Head = () => <Seo title="All posts" />
+
 export const pageQuery = graphql`
   query {
     site {
@@ -65,7 +66,7 @@ export const pageQuery = graphql`
         author
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           excerpt

@@ -118,13 +118,14 @@ const MortgageCalcApp = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Apps: Mortgage calculator" />
       <App />
     </Layout>
   )
 }
 
 export default MortgageCalcApp
+
+export const Head = () => <Seo title="Apps: Mortgage calculator" />
 
 export const pageQuery = graphql`
   query {

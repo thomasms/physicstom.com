@@ -74,12 +74,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-147422535-1`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -110,7 +104,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
+                  sort: { frontmatter: { date: DESC } },
                 ) {
                   nodes {
                     excerpt
@@ -144,9 +138,23 @@ module.exports = {
         icon: `content/assets/android-chrome-512x512.png`,
       },
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        sassOptions: {
+          // Bulma 0.9 uses older Sass syntax; hide its deprecation noise
+          silenceDeprecations: [
+            `legacy-js-api`,
+            `import`,
+            `global-builtin`,
+            `color-functions`,
+            `if-function`,
+            `slash-div`,
+          ],
+        },
+      },
+    },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

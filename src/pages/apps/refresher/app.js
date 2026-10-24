@@ -85,7 +85,6 @@ class RefresherApp extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Seo title="Apps: Refresher" />
         <CookiesProvider>
           <RefresherWithCookies />
         </CookiesProvider>
@@ -95,6 +94,8 @@ class RefresherApp extends React.Component {
 }
 
 export default RefresherApp
+
+export const Head = () => <Seo title="Apps: Refresher" />
 
 export const pageQuery = graphql`
   query {

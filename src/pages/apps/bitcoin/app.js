@@ -114,13 +114,14 @@ const BitCoinApp = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="Apps: Bitcoin tracker" />
       <App />
     </Layout>
   )
 }
 
 export default BitCoinApp
+
+export const Head = () => <Seo title="Apps: Bitcoin tracker" />
 
 export const pageQuery = graphql`
   query {
